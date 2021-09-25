@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~6.0.0"
+  },
+  "fitbit": {
+    "appUUID": "68101b8f-3a30-4ba5-b774-9b10a5099af5",
+    "appType": "clockface",
+    "appDisplayName": "Textwach Italiano",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate"
+    ],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "Textwach Italiano"
+      },
+      "it-IT": {
+        "name": "Textwach Italiano"
+      }
+    },
+    "defaultLanguage": "it-IT"
+  }
+}
