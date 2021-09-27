@@ -23,9 +23,9 @@ const onClockTick = (date) => {
     batteryUpdater.updateBattery();
     healthData.updateHealth(date);
 }
-
-let aod = false;
 /*
+let aod = false;
+
 if (display.aodAvailable && me.permissions.granted("access_aod")) {
   // tell the system we support AOD
   display.aodAllowed = true;
@@ -38,14 +38,14 @@ if (display.aodAvailable && me.permissions.granted("access_aod")) {
     if (!display.aodActive && display.on) {
      // body.start();
       //hrm.start();
-      clock.granularity = "seconds";
+      clock.granularity = "minutes";
     //  clockController.weather.updateWeather();
       aod=false;
     } else {
      // body.stop();
       //hrm.stop();
      // clock.granularity = "minutes";
-     // aod = true;
+      aod = true;
     }
   });
 } else {
@@ -55,9 +55,11 @@ if (display.aodAvailable && me.permissions.granted("access_aod")) {
     if (display.on) {
       //body.start();
      // hrm.start();
-      clock.granularity = "seconds";
+      clock.granularity = "minutes";
+aod = false;
       //clockController.weather.updateWeather();
     } else {
+      aod=true;
      // body.stop();
       //hrm.stop();
       //clock.granularity = "minutes";
@@ -65,8 +67,5 @@ if (display.aodAvailable && me.permissions.granted("access_aod")) {
   });
 }
 */
-
-
-
-const clock = new myClock(onClockTick, new Animator(domHelper, aod), domHelper);
+const clock = new myClock(onClockTick, new Animator(domHelper), domHelper);
 

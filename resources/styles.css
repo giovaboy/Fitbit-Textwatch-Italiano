@@ -2,6 +2,11 @@
   viewport-fill: black;
 }
 
+.hours {
+  font-size: 58;
+  font-family: Colfax-Bold;
+}
+
 .minutes {
   font-size: 58;
   font-family: Colfax-Regular;
@@ -38,50 +43,44 @@ textarea {
   y: 90%;
 }
 
-
 #hours {
-  font-size: 58;
-  font-family: Colfax-Bold;
   x: 50%; text-anchor: middle;
-  /*x: 2%;*/
-  y: 20%;
+  y: 32%;
 }
 
 #hoursNext {
-  font-size: 58;
-  font-family: Colfax-Bold;
   x: 180%;  text-anchor: middle;
-  y: 20%;
+  y: 32%;
 }
 
 #tens {
   x: 50%; text-anchor: middle;
-  y: 38%;
+  y: 50%;
 }
 
 #tensNext {
   x: 180%;  text-anchor: middle;
-  y: 38%;
+  y: 50%;
 }
 
 #minutes {
   x: 50%; text-anchor: middle;
-  y: 56%;
+  y: 68%;
 }
 
 #minutesNext {
   x: 180%;  text-anchor: middle;
-  y: 56%;
+  y: 68%;
 }
 
 #minutesB {
   x: 50%; text-anchor: middle;
-  y: 74%;
+  y: 86%;
 }
 
 #minutesBNext {
   x: 180%;  text-anchor: middle;
-  y: 74%;
+  y: 86%;
 }
 
 #date {
@@ -97,6 +96,11 @@ textarea {
 }
 
 #stepcount {
+  x: 75%;
+  y: 97%;
+  text-anchor: middle;
+}
+{
   x: 75%;
   y: 97%;
   text-anchor: middle;

@@ -9,5 +9,5 @@
   <text id="stepcount" class="aux-data"></text>
   
   <text id="date" class="aux-data"></text>
-  <rect id="batteryLevel" x="100%" y="98%" height="2" width="0" fill="white" />
+  <rect id="batteryLevel" x="100%" y="96%" height="2" width="0" fill="white" />
 </svg>

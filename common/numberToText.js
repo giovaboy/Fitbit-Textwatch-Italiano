@@ -1,82 +1,86 @@
 export default class NumberToText {
   static map() {
     return {
-      midnight: 'Mezzanotte',
+      midnight: 'mezzanotte',
       mezzogiorno: 'mezzogiorno',
-      e: "e ",
-      0: "in punto",
-      1: 'Uno',
-      2: 'Due',
-      3: 'Tre',
-      4: 'Quattro',
-      5: 'Cinque',
-      6: 'Sei',
-      7: 'Sette',
-      8: 'Otto',
-      9: 'Nove',
-      10: 'Dieci',
-      11: 'Undici',
-      12: 'Dodici',
-      13: 'Tredici',
-      14: 'Quattordici',
-      15: 'Quindici',
-      16: 'Sedici',
-      17: 'Diciassette',
-      18: 'Diciotto',
-      19: 'Diciannove',
-      20: 'Venti',
-      21: 'Ventuno',
-      22: 'Ventidue',
+      una: 'una',
+      e: 'e ',
+      0: 'in punto',
+      1: 'uno',
+      2: 'due',
+      3: 'tre',
+      4: 'quattro',
+      5: 'cinque',
+      6: 'sei',
+      7: 'sette',
+      8: 'otto',
+      9: 'nove',
+      10: 'dieci',
+      11: 'undici',
+      12: 'dodici',
+      13: 'tredici',
+      14: 'quattordici',
+      15: 'quindici',
+      16: 'sedici',
+      17: 'diciassette',
+      18: 'diciotto',
+      19: 'diciannove',
+      20: 'venti',
+      21: 'ventuno',
+      22: 'ventidue',
       23: 'ventitre',
-      28: 'Ventotto',
-      30: 'Trenta',
-      31: 'Trentuno',
-      38: 'Trentotto',
-      40: 'Quaranta',      
-      41: 'Quarantuno',
-      48: 'Quarantotto',
-      50: 'Cinquanta',
-      51: 'Cinquantuno',
-      58: 'Cinquantotto'
+      28: 'ventotto',
+      30: 'trenta',
+      31: 'trentuno',
+      38: 'trentotto',
+      40: 'quaranta',      
+      41: 'quarant uno',
+      48: 'quarant otto',
+      50: 'cinquanta',
+      51: 'cinquant uno',
+      58: 'cinquant otto'
     };
   }
   
   static days() {
     return {
-      0: 'Domenica',
-      1: 'Lunedì',
-      2: 'Martedì',
-      3: 'Mercoledì',
-      4: 'Giovedì',
-      5: 'Venerdì',
-      6: 'Sabato'
+      0: 'domenica',
+      1: 'lunedì',
+      2: 'martedì',
+      3: 'mercoledì',
+      4: 'giovedì',
+      5: 'venerdì',
+      6: 'sabato'
     };
   }
   
   static months() {
     return {
-      0: 'Gennaio',
-      1: 'Febbraio',
-      2: 'Marzo',
-      3: 'Aprile',
-      4: 'Maggio',
-      5: 'Giugno',
-      6: 'Luglio',
-      7: 'Agosto',
-      8: 'Settembre',
-      9: 'Ottobre',
-      10: 'Novembre',
-      11: 'Dicembre'
+      0: 'gennaio',
+      1: 'febbraio',
+      2: 'marzo',
+      3: 'aprile',
+      4: 'maggio',
+      5: 'giugno',
+      6: 'luglio',
+      7: 'agosto',
+      8: 'settembre',
+      9: 'ottobre',
+      10: 'novembre',
+      11: 'dicembre'
     };
   }
 
   static getHour(input) {
-    if (input === 0) {
-      return this.map()['midnight'];
-    } else if ( input === 12){
-      return this.map()['mezzogiorno'];
-    } else {
-      return this.map()[input];
+    switch (input){
+      case 0:
+        return this.map()['midnight'];
+      case 12:
+        return this.map()['mezzogiorno'];
+      case 1:
+        return this.map()['una'];
+      default:
+        return this.map()[input];
     }
   }
 
@@ -84,13 +88,13 @@ export default class NumberToText {
     //console.log(input);
     if (input === 0 ) {
       return this.map()[input];
-    } else
-    if (input < 20 || input === 21 || input === 28 || input === 31 || input === 38 || input ===  41 || input === 48 || input ===  51 || input ===  58 ) {
+    } //else
+    let modulo = input % 10;
+    if (input < 20 || modulo === 1 || modulo === 8 ) {
       return `${this.map()['e']}${this.map()[input]}`;
-    } else{
+    } else {
       let decine = this.map()[Math.floor(input / 10) * 10];
-      let modulo  = input % 10;
-      
+     // let modulo  = input % 10;
       return modulo ? `${this.map()['e']}${decine}${this.map()[modulo]}` : `${this.map()['e']}${decine}`;
     }
   }

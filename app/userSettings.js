@@ -9,9 +9,7 @@ const SETTINGS_FILE = 'settings.cbor';
 export default class SettingsManager {
     constructor(domHelper) {
         this.domHelper = domHelper;
-      
         this.registerCompanionLink();
-      
         this.getSavedSettings();
         this.setSettings();
     }
@@ -159,5 +157,7 @@ export default class SettingsManager {
       } catch (e) {
         console.error(e);
       }
+    }
+}     }
     }
 }

@@ -7,6 +7,7 @@ export default class DomHelper {
   }
   
   grabElements() {
+    this.document = document;
     this.root = document.getElementById('root');
     this.background = document.getElementById('tapzone');
     this.batteryBar = document.getElementById('batteryLevel');

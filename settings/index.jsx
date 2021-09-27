@@ -31,25 +31,25 @@ const settings = (props) => {
   return (
     <Page>
       <Section title={<Text bold align="center">Text Watch Italiano</Text>}>
-        <Toggle label="Show Battery Bar" settingsKey="showBattery" />
+        <Toggle label="Mostra Batteria" settingsKey="showBattery" />
         
         <Toggle label="Dim Battery Bar" settingsKey="dimBattery" />
         
-        <Text>Background Color</Text>
+        <Text>Colore sfondo</Text>
         <ColorSelect settingsKey="bgColor" colors={colors} />
         
-        <Text>Foreground Color</Text>
+        <Text>Colore data</Text>
         <ColorSelect settingsKey="fgColor" colors={colors} />
         
-        <Text>Hour Color</Text>
+        <Text>Colore ora</Text>
         <ColorSelect settingsKey="hourColor" colors={colors} />
         
-        <Text>Min Color</Text>
+        <Text>Colore minuti</Text>
         <ColorSelect settingsKey="minColor" colors={colors} />
         
         <Button
           list
-          label="Clear Settings Storage"
+          label="Reset impostazioni"
           onClick={() => props.settingsStorage.clear()}
         />
       </Section>
@@ -57,4 +57,4 @@ const settings = (props) => {
   )
 }
 
-registerSettingsPage(settings);
+registerSettingsPage(settings);ettings);
