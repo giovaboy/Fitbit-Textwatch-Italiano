@@ -1,5 +1,6 @@
 import document from "document";
-import {battery} from 'power';
+import { battery } from 'power';
+import { charger } from 'power';
 
 export default class BatteryUtil {
     constructor(domHelper, settingsManager) {
@@ -8,18 +9,16 @@ export default class BatteryUtil {
     }
 
     updateBattery() {
-        if (this.settingsManager.settings.showBattery) {          
-            this.setBatteryLevel(this.getBatteryLevel());
+      let v = this.settingsManager.settings.showBattery2.selected;
+        if ( (v == 1) || (v == 2 && battery.chargeLevel < 25) ) {      
+          this.domHelper.batterycontainer.style.display = "inline";
+          this.domHelper.batterylevel.text = Math.floor(battery.chargeLevel) + "%";
         } else {
-            this.hideBattery();
+          this.domHelper.batterycontainer.style.display = "none";
+
         }
     }
-  
-    getBatteryLevel() {
-        if (battery.chargeLevel > 50) {
-            const batteryMod = battery.chargeLevel % 10;
-            const batteryMain = Math.ceil(battery.chargeLevel / 10);
-            const batteryLevel = (batteryMod == 0) ? battery.chargeLevel : batteryMain * 10;
+} == 0) ? battery.chargeLevel : batteryMain * 10;
         } else {
             const batteryLevel = battery.chargeLevel;
         }

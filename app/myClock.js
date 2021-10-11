@@ -2,7 +2,7 @@ import clock from "clock";
 import { display } from "display";
 import { me } from "appbit";
 import document from 'document';
-import {preferences} from "user-settings";
+import { preferences } from "user-settings";
 import NumberToText from '../common/numberToText';
 import * as util from "../common/utils";
 
@@ -10,7 +10,7 @@ const DEBUG = false;
 
 export default class myClock {
   
-  constructor(callback, animator, domHelper) {
+  constructor(callback, animator, domHelper, settingsManager, batteryUpdater) {
     clock.granularity = 'minutes';
     clock.ontick = () => {
       this.doTick();
@@ -20,7 +20,10 @@ export default class myClock {
     this.callback = callback;
     this.animator = animator;
     this.domHelper = domHelper;
+    this.settingsManager = settingsManager;
+    this.batteryUpdater = batteryUpdater;
   }
+      
 /*
   forceUpdate() {
     this.isFresh = true;
@@ -28,6 +31,7 @@ export default class myClock {
   }
 */
   doTick(event) {
+    //this.batteryUpdater.updateBattery();
     //if (DEBUG) console.log(this.isFresh);
     //if (DEBUG) console.log(this.callback);
     let today = event ? event.date : new Date();
@@ -39,40 +43,13 @@ export default class myClock {
       hourInt = hourInt % 12 || 12;
     } 
 
-    let currentHourString = NumberToText.getHour(hourInt);
+    let currentHourString = NumberToText.getHour(hourInt).replace(' ', '');
     let currentMinuteParts = NumberToText.getMinutes(minuteInt).split(' ');
 
     // Setup next values for animations    
     this.domHelper.hoursNext.text = currentHourString;
-    this.domHelper.tensNext.text = currentMinuteParts[0] +' ' + currentMinuteParts[1];
+    this.domHelper.tensNext.text = currentMinuteParts[0] + ' ' + currentMinuteParts[1];
     this.domHelper.minutesNext.text = currentMinuteParts[2] || '';    
-    this.domHelper.minutesBNext.text = currentMinuteParts[2] || '';
-   
-    /*
-    if (DEBUG) {
-      console.log("root_Width: " + this.domHelper.root.width);
-      console.log("hoursNext_Width: " + this.domHelper.hoursNext.getBBox().width);
-      console.log("tensNext_Width: " + this.domHelper.tensNext.getBBox().width);
-      console.log("minutesNext_Width: " + this.domHelper.minutesNext.getBBox().width);
-      console.log("minutesBNext_Width: " + this.domHelper.minutesBNext.getBBox().width);
-    }
-    
-    let rootW = this.domHelper.root.width;
-    
-    if (this.domHelper.hoursNext.getBBox().width > rootW) {
-      util.changeFontSize(this.domHelper.hoursNext,-6);
-    } else {this.domHelper.hoursNext.style.fontSyze = 58}
-    if (this.domHelper.tensNext.getBBox().width > rootW) {
-      util.changeFontSize(this.domHelper.tensNext,-6);
-    } else {this.domHelper.tensNext.style.fontSyze = 58}
-    if (this.domHelper.minutesNext.getBBox().width > rootW) {
-      util.changeFontSize(this.domHelper.minutesNext,-6);
-    } else {}
-    if (this.domHelper.minutesBNext.getBBox().width > rootW) {
-      util.changeFontSize(this.domHelper.minutesBNext,-6);
-    } else {}
-    
-    */
     
     if (display.aodAvailable && me.permissions.granted("access_aod")) {
       // tell the system we support AOD
@@ -80,8 +57,34 @@ export default class myClock {
       display.addEventListener("change", () => {
         // Is the display on?
         if (!display.aodActive && display.on) {
-  
+          //if (DEBUG) console.log("display is on in AOD");
+          this.domHelper.background.style.fill = this.settingsManager.settings.bgColor;
+
+          this.domHelper.hours.style.fontFamily = "Colfax-Bold";
+          this.domHelper.tens.style.fontFamily = "Colfax-Regular";
+          this.domHelper.minutes.style.fontFamily = "Colfax-Regular";
+
+          this.domHelper.hours.style.fill = this.settingsManager.settings.hourColor;
+          this.domHelper.tens.style.fill = this.settingsManager.settings.minColor;
+          this.domHelper.minutes.style.fill = this.settingsManager.settings.minColor;
+
+          this.domHelper.date.style.display = "inline";
+          this.domHelper.heartratecontainer.style.display = "inline";
+          this.domHelper.stepcontainer.style.display = "inline";
+            
         } else {
+          this.domHelper.background.style.fill = '#000000';
+          this.domHelper.hours.style.fontFamily = "Colfax-Light";
+          this.domHelper.tens.style.fontFamily = "Colfax-Light";
+          this.domHelper.minutes.style.fontFamily = "Colfax-Light";
+
+          this.domHelper.hours.style.fill = '#FFFFFF';
+          this.domHelper.tens.style.fill = '#FFFFFF';
+          this.domHelper.minutes.style.fill = '#FFFFFF';
+
+          this.domHelper.date.style.display = "none";
+          this.domHelper.heartratecontainer.style.display = "none";
+          this.domHelper.stepcontainer.style.display = "none";
           this.isFresh = true;
         }
       });
@@ -89,19 +92,50 @@ export default class myClock {
       display.addEventListener("change", () => {
       // Is the display on?
         if (display.on) {
-          if (DEBUG) console.log("display is on");
+          //if (DEBUG) console.log("display is on");          
         } else {
           this.isFresh = true;
         }
       });
     } 
     
+    /*
+     //TEST
+          if(minuteInt % 2 == 1) {
+            this.domHelper.background.style.fill = this.settingsManager.settings.bgColor;
+
+            this.domHelper.hours.style.fontFamily = "Colfax-Bold";
+            this.domHelper.tens.style.fontFamily = "Colfax-Regular";
+            this.domHelper.minutes.style.fontFamily = "Colfax-Regular";
+
+            this.domHelper.hours.style.fill = this.settingsManager.settings.hourColor;
+            this.domHelper.tens.style.fill = this.settingsManager.settings.minColor;
+            this.domHelper.minutes.style.fill = this.settingsManager.settings.minColor;
+
+            this.domHelper.date.style.display = "inline";
+            this.domHelper.heartratecontainer.style.display = "inline";
+            this.domHelper.stepcontainer.style.display = "inline";
+          } else {
+             this.domHelper.background.style.fill = '#000000';
+            this.domHelper.hours.style.fontFamily = "Colfax-Light";
+            this.domHelper.tens.style.fontFamily = "Colfax-Light";
+            this.domHelper.minutes.style.fontFamily = "Colfax-Light";
+            
+            this.domHelper.hours.style.fill = '#FFFFFF';
+            this.domHelper.tens.style.fill = '#FFFFFF';
+            this.domHelper.minutes.style.fill = '#FFFFFF';
+            
+            this.domHelper.date.style.display = "none";
+            this.domHelper.heartratecontainer.style.display = "none";
+            this.domHelper.stepcontainer.style.display = "none";
+            this.isFresh = true;            
+          }
+    */
     if ( this.isFresh ) {
       // Skip animation
       this.domHelper.hours.text = currentHourString;
       this.domHelper.tens.text = currentMinuteParts[0] + ' ' + currentMinuteParts[1];
       this.domHelper.minutes.text = currentMinuteParts[2] || '';
-      this.domHelper.minutesB.text = currentMinuteParts[2] || '';
      // if (DEBUG) { this.domHelper.minutesB.text = secInt; }
       this.isFresh = false;
     } else {

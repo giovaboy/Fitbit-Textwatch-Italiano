@@ -1,50 +1,60 @@
 import document from "document";
-import {today} from 'user-activity';
-import {HeartRateSensor} from 'heart-rate';
+import { today } from 'user-activity';
+import { HeartRateSensor } from 'heart-rate';
+import { BodyPresenceSensor } from "body-presence";
+import { display } from "display";
 
 export default class HealthMonitor {
   
   constructor(domHelper) {
     this.domHelper = domHelper;
-    this.hrm = new HeartRateSensor();
-    this.hrm.onreading = () => {
-      this.updateHeartData();
+    
+    if (HeartRateSensor) {
+      this.hrm = new HeartRateSensor({ frequency: 1 });
+      this.hrm.onreading = () => {
+        //console.log("HRM ONREADING");
+        this.updateHeartData();
+      }
+    }
+    
+    if (BodyPresenceSensor) {
+      this.body = new BodyPresenceSensor();
+       this.body.onreading = () => {
+        //console.log("BODY ONREADING");
+        if ( !this.body.present ) {
+          this.hrm.stop();
+          this.domHelper.heartrate.text = "--";
+        }
+      
+      }
     }
   }
 
-  updateHealth(time) {
-    if (time.getMinutes() % 1 == 0) {
+  updateHealth() {
+    this.body.start();
+    if (!display.aodActive && display.on) {
       this.hrm.start();
+    } else {
+      this.hrm.stop();
     }
+
     this.updateStepData();
   }
 
   updateStepData() {
     let metrics = today.adjusted;
-    this.domHelper.stepcount.text = `${metrics['steps']}` || '';
+    if ( metrics['steps']) {
+      this.domHelper.stepcount.text = metrics['steps'];
+    } else {
+      this.domHelper.stepcount.text = '';
+    }
   }
 
   updateHeartData() {
-    //const hr = this.hrm.heartRate;
-    this.domHelper.heartrate.text = `♥️ ${this.hrm.heartRate}`;
-    this.hrm.stop();
-  }
-  /*
-  // Create a new instance of the HeartRateSensor object
-let heartRateMonitor = new HeartRateSensor();
-heartRateMonitor.onreading = function () {
-    // Peek the current sensor values
-    heartRateLabel.text = heartRateMonitor.heartRate;
-}
-
-function updateHeartRateSensor() {
-    // Begin monitoring the sensor
-    heartRateMonitor.start();
-}
-
-function stopHeartRateSensor() {
-    // Stop monitoring the sensor
-    heartRateMonitor.stop();
-}*/
-  
+    this.domHelper.heartrate.text = this.hrm.heartRate;
+    if (!display.aodActive && display.on) {
+    } else {
+      this.hrm.stop();
+    }
+  }  
 }

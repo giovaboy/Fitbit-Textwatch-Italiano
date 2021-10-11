@@ -8,7 +8,8 @@ export default class DateManager {
     }
 
     updateDate(today) {
-        //this.domHelper.dayofweek.text = `ok`//util.toLower(NumberToText.getDayOfWeek(today.getDay()));
         this.domHelper.date.text = `${util.toLower(NumberToText.getDayOfWeek(today.getDay()))} ${today.getDate()} ${util.toLower(NumberToText.getMonth(today.getMonth()))}`;
+    }
+}k(today.getDay()))} ${today.getDate()} ${util.toLower(NumberToText.getMonth(today.getMonth()))}`;
     }
 }

@@ -1,9 +1,9 @@
 const colors = [
   {color: '#000000'},
+  {color: '#FFFFFF'},
   {color: '#303030'},
   {color: '#505050'},
   {color: '#A0A0A0'},
-  {color: '#1B2C40'},
   {color: '#5B4CFF'},
   {color: '#8080FF'},
   {color: '#3182DE'},
@@ -24,37 +24,60 @@ const colors = [
   {color: '#D828B8'},
   {color: '#A51E7C'},
   {color: '#BD4EFC'},
-  {color: '#FFFFFF'},
+  {color: '#4D86FF'},
+  {color: '#15B9ED'},
+  {color: '#2CB574'},
+  {color: '#8173FF'},
+  {color: '#72B314'},
+  {color: '#F1247C'},
+  {color: '#FF752D'},
+  {color: '#FF78B7'},
+  {color: '#C658FB'},
+  {color: '#FA4D61'},
+  {color: '#1B2C40'},
+  {color: '#F0A500'}
 ];
 
 const settings = (props) => {
   return (
     <Page>
       <Section title={<Text bold align="center">Text Watch Italiano</Text>}>
-        <Toggle label="Mostra Batteria" settingsKey="showBattery" />
+         <Text>Grazie per aver installato questa clockface!</Text>
+      </Section> 
+      
+        <Section title={<Text>Colore sfondo</Text>}>
+          <ColorSelect settingsKey="bgColor" colors={colors} centered />
+        </Section>
         
-        <Toggle label="Dim Battery Bar" settingsKey="dimBattery" />
+        <Section title={<Text>Colore ora</Text>}>
+          <ColorSelect settingsKey="hourColor" colors={colors} centered />
+        </Section>
         
-        <Text>Colore sfondo</Text>
-        <ColorSelect settingsKey="bgColor" colors={colors} />
+        <Section title={<Text>Colore minuti</Text>}>
+          <ColorSelect settingsKey="minColor" colors={colors} centered />
+        </Section>
         
-        <Text>Colore data</Text>
-        <ColorSelect settingsKey="fgColor" colors={colors} />
+        <Section title={<Text>Colore data</Text>}>
+          <ColorSelect settingsKey="fgColor" colors={colors} centered />
+        </Section>
         
-        <Text>Colore ora</Text>
-        <ColorSelect settingsKey="hourColor" colors={colors} />
         
-        <Text>Colore minuti</Text>
-        <ColorSelect settingsKey="minColor" colors={colors} />
+      <Section title={<Text bold align="center">Altro</Text>}>
         
-        <Button
-          list
-          label="Reset impostazioni"
-          onClick={() => props.settingsStorage.clear()}
-        />
+        {/*<Toggle label="Mostra Batteria" settingsKey="showBattery" /> */}
+        <Select label={`Mostra stato della batteria`}
+                settingsKey="showBattery2"
+                options={[
+                  {name:"No"},
+                  {name:"Sì"},
+                  {name:"Se Sotto al 25%"}
+                ]}/>
+        {/*<Toggle label="Dim Battery Bar" settingsKey="dimBattery" />*/} 
+        
+        <Button label="Reset impostazioni" onClick={() => props.settingsStorage.clear()} />
       </Section>
     </Page>
   )
 }
 
-registerSettingsPage(settings);ettings);
+registerSettingsPage(settings);

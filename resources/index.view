@@ -1,13 +1,30 @@
 <svg id="root" class="background" >
   <rect x="0" y="0" width="100%" height="100%" id="tapzone" />
+   
+
+  <svg id="batterycontainer" class="container">
+
+    <text id="batteryIcon" class="aux-data">🔋</text>
+
+    <text id="batterylevel" class="aux-data"></text>
+
+  </svg>
+
+  
+  
   <use id="hoursCont" href="#hoursGroup" /><use id="hoursNextCont" href="#hoursNextGroup" />
   <use id="tensCont" href="#tensGroup" /><use id="tensNextCont" href="#tensNextGroup" />
   <use id="minutesCont" href="#minutesGroup" /><use id="minutesNextCont" href="#minutesNextGroup" />
-  <use id="minutesBCont" href="#minutesBGroup" /><use id="minutesBNextCont" href="#minutesBNextGroup" />
   
-  <text id="heartrate" class="aux-data"></text>
-  <text id="stepcount" class="aux-data"></text>
+  <svg id="heartratecontainer" class="container">
+    <text id="heartIcon" class="aux-data">♥️</text>
+    <text id="heartrate" class="aux-data"></text>
+  </svg>
+  
+  <svg id="stepcontainer" class="container">
+    <text id="stepIcon" class="aux-data">👟</text>
+    <text id="stepcount" class="aux-data"></text>
+  </svg>
   
   <text id="date" class="aux-data"></text>
-  <rect id="batteryLevel" x="100%" y="96%" height="2" width="0" fill="white" />
 </svg>

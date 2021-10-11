@@ -5,6 +5,8 @@ export default class NumberToText {
       mezzogiorno: 'mezzogiorno',
       una: 'una',
       e: 'e ',
+      quarto: 'e un quarto',
+      45: 'e tre quarti',
       0: 'in punto',
       1: 'uno',
       2: 'due',
@@ -19,10 +21,10 @@ export default class NumberToText {
       11: 'undici',
       12: 'dodici',
       13: 'tredici',
-      14: 'quattordici',
+      14: 'quattor dici',
       15: 'quindici',
       16: 'sedici',
-      17: 'diciassette',
+      17: 'dicias sette',
       18: 'diciotto',
       19: 'diciannove',
       20: 'venti',
@@ -78,6 +80,7 @@ export default class NumberToText {
       case 12:
         return this.map()['mezzogiorno'];
       case 1:
+      case 13:
         return this.map()['una'];
       default:
         return this.map()[input];
@@ -85,19 +88,26 @@ export default class NumberToText {
   }
 
   static getMinutes(input) {
-    //console.log(input);
-    if (input === 0 ) {
-      return this.map()[input];
-    } //else
-    let modulo = input % 10;
-    if (input < 20 || modulo === 1 || modulo === 8 ) {
-      return `${this.map()['e']}${this.map()[input]}`;
-    } else {
-      let decine = this.map()[Math.floor(input / 10) * 10];
-     // let modulo  = input % 10;
-      return modulo ? `${this.map()['e']}${decine}${this.map()[modulo]}` : `${this.map()['e']}${decine}`;
+    switch (input){
+      case 0:
+      case 45:
+        return this.map()[input];
+      case 15:
+        return this.map()['quarto'];
+      default:
+        let modulo = input % 10;
+        if (input < 20 || modulo === 1 || modulo === 8 ) {
+          return `${this.map()['e']}${this.map()[input]}`;
+        } else {
+          let decine = this.map()[Math.floor(input / 10) * 10];
+          if ( input > 30 ){
+            return modulo ? `${this.map()['e']}${decine}${' '}${this.map()[modulo]}` : `${this.map()['e']}${decine}`;
+          } else {
+            return modulo ? `${this.map()['e']}${decine}${this.map()[modulo]}` : `${this.map()['e']}${decine}`;
+          }
+        }
+      }
     }
-  }
   
   static getDayOfWeek(input) {
     return this.days()[input];

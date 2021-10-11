@@ -1,3 +1,7 @@
+import { display } from "display";
+import { me } from "appbit";
+import { memory } from "system";
+
 import myClock from './myClock';
 import DateUpdater from './date';
 import BatteryUpdater from './battery';
@@ -5,13 +9,12 @@ import HealthMonitor from './activity';
 import Animator from './animator';
 import SettingsManager from './userSettings';
 import DomHelper from './dom';
-import { display } from "display";
-import { me } from "appbit";
 
 import NumberToText from '../common/numberToText';
 import * as util from "../common/utils";
 
 const domHelper = new DomHelper();
+const animator = new Animator(domHelper);
 const healthData = new HealthMonitor(domHelper);
 const dateUpdater = new DateUpdater(domHelper);
 const settingsManager = new SettingsManager(domHelper);
@@ -21,20 +24,13 @@ const onClockTick = (date) => {
     // Populate metadata
     dateUpdater.updateDate(date);
     batteryUpdater.updateBattery();
-    healthData.updateHealth(date);
+    healthData.updateHealth();//date);
+    //console.log("JS memory: " + memory.js.peak + " - " + memory.js.used + "/" + memory.js.total);
 }
-/*
-let aod = false;
 
-if (display.aodAvailable && me.permissions.granted("access_aod")) {
-  // tell the system we support AOD
-  display.aodAllowed = true;
+let clock = new myClock(onClockTick, animator, domHelper, settingsManager, batteryUpdater);
 
-  // respond to display change events
-  display.addEventListener("change", () => {
-    //switchDarkMode();
-
-    // Is the display on?
+he display on?
     if (!display.aodActive && display.on) {
      // body.start();
       //hrm.start();

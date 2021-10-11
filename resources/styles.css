@@ -1,33 +1,82 @@
 .background {
-  viewport-fill: black;
+  viewport-fill: #000000;
 }
-
-.hours {
-  font-size: 58;
-  font-family: Colfax-Bold;
-}
-
-.minutes {
-  font-size: 58;
-  font-family: Colfax-Regular;
-}
-
-.current {
-/*   fill: green;   */
-}
-
-.upcoming {
-/*   fill: blue; */
-}
+/*
+.foreground-fill            { fill: fb-white; }
+.background-fill            { fill: fb-black; }
 
 text {
-  fill: white;
-  text-length: 50;
+  fill: #ffffff;
 }
 
 textarea {
-  fill: white;
-  text-length: 50;
+  fill: #ffffff;
+}
+*/
+.hours {
+  font-size: 58;
+  text-length: 20;
+  font-family: Colfax-Bold;
+}
+
+.mins {
+  font-size: 58;
+  text-length: 20;
+  font-family: Colfax-Regular;
+}
+
+#hours {
+  text-length: 18;
+  font-size: 58;
+  font-family: Colfax-Bold;
+  text-anchor: middle;
+  x: 50%; 
+  y: 32%;
+}
+
+#hoursNext {
+  text-length: 18;
+  font-size: 58;
+  font-family: Colfax-Bold;
+  text-anchor: middle;
+  x: 180%;
+  y: 32%;
+}
+
+#tens {
+  text-length: 18;
+  font-size: 58;
+  font-family: Colfax-Regular;
+  text-anchor: middle;
+  x: 50%;
+  y: 50%;
+}
+
+#tensNext {
+  text-length: 18;
+  font-size: 58;
+  font-family: Colfax-Regular;
+  text-anchor: middle;
+  x: 180%;
+  y: 50%;
+}
+
+#minutes {
+  text-length: 18;
+  font-size: 58;
+  font-family: Colfax-Regular;
+  text-anchor: middle;
+  x: 50%;
+  y: 68%;
+}
+
+#minutesNext {
+  text-length: 18;
+  font-size: 58;
+  font-family: Colfax-Regular;
+  text-anchor: middle;
+  x: 180%;
+  y: 68%;
 }
 
 .aux-data {
@@ -35,73 +84,49 @@ textarea {
   font-family: Colfax-Regular;
 }
 
-#activity {
-  fill: #2490dd;
-  width: 24;
-  height: 24;
-  x: 2%;
-  y: 90%;
-}
-
-#hours {
-  x: 50%; text-anchor: middle;
-  y: 32%;
-}
-
-#hoursNext {
-  x: 180%;  text-anchor: middle;
-  y: 32%;
-}
-
-#tens {
-  x: 50%; text-anchor: middle;
-  y: 50%;
-}
-
-#tensNext {
-  x: 180%;  text-anchor: middle;
-  y: 50%;
-}
-
-#minutes {
-  x: 50%; text-anchor: middle;
-  y: 68%;
-}
-
-#minutesNext {
-  x: 180%;  text-anchor: middle;
-  y: 68%;
-}
-
-#minutesB {
-  x: 50%; text-anchor: middle;
-  y: 86%;
-}
-
-#minutesBNext {
-  x: 180%;  text-anchor: middle;
-  y: 86%;
-}
-
 #date {
   x: 50%;
   y: 86%;
+  text-length: 30;
   text-anchor: middle;
+}
+
+#batteryIcon {
+  x:22%;
+  y:10%;
+  text-length:1;
+}
+
+#batterylevel {
+  x: $+2;
+  y: 10%;
+  text-length: 4;
+  text-anchor: start;
+  fill: #ffffff;
+ }
+
+#heartIcon {
+  x: 22%;
+  y: 97%;
+  text-length: 1;
 }
 
 #heartrate {
-  x: 25%;
+  x: $+2;
   y: 97%;
-  text-anchor: middle;
+  text-length: 4;
+  text-anchor: start;
+}
+
+#stepIcon {
+  x: 56%;
+  y: 97%;
+  text-length: 1;
 }
 
 #stepcount {
-  x: 75%;
+  x: $+2;
   y: 97%;
-  text-anchor: middle;
-}
-{
-  x: 75%;
-  y: 97%;
-  text-anchor: middle;
+  text-length: 6;
+  text-anchor: start;
 }
