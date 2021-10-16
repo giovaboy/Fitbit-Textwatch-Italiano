@@ -31,6 +31,8 @@ export default class NumberToText {
       21: 'ventuno',
       22: 'ventidue',
       23: 'ventitre',
+      24: 'venti quattro',
+      25: 'venti cinque',
       28: 'ventotto',
       30: 'trenta',
       31: 'trentuno',
@@ -96,7 +98,7 @@ export default class NumberToText {
         return this.map()['quarto'];
       default:
         let modulo = input % 10;
-        if (input < 20 || modulo === 1 || modulo === 8 ) {
+        if (input < 26 || modulo === 1 || modulo === 8 ) {
           return `${this.map()['e']}${this.map()[input]}`;
         } else {
           let decine = this.map()[Math.floor(input / 10) * 10];

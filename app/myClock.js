@@ -10,7 +10,7 @@ const DEBUG = false;
 
 export default class myClock {
   
-  constructor(callback, animator, domHelper, settingsManager, batteryUpdater) {
+  constructor(callback, animator, domHelper, settingsManager) {
     clock.granularity = 'minutes';
     clock.ontick = () => {
       this.doTick();
@@ -21,7 +21,6 @@ export default class myClock {
     this.animator = animator;
     this.domHelper = domHelper;
     this.settingsManager = settingsManager;
-    this.batteryUpdater = batteryUpdater;
   }
       
 /*
@@ -31,13 +30,12 @@ export default class myClock {
   }
 */
   doTick(event) {
-    //this.batteryUpdater.updateBattery();
     //if (DEBUG) console.log(this.isFresh);
     //if (DEBUG) console.log(this.callback);
-    let today = event ? event.date : new Date();
+    const today = event ? event.date : new Date();
     // Now
     let hourInt = today.getHours();
-    let minuteInt = today.getMinutes();
+    const minuteInt = today.getMinutes();
     
     if (preferences.clockDisplay === "12h") {
       hourInt = hourInt % 12 || 12;
@@ -141,6 +139,13 @@ export default class myClock {
     } else {
       // Setup animation
       this.animator.handleTimeChange();
+    }
+
+    if (this.callback) {
+        this.callback(today);
+    }
+  }
+}tor.handleTimeChange();
     }
 
     if (this.callback) {

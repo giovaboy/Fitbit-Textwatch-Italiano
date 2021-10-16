@@ -10,16 +10,11 @@ export default class DomHelper {
     this.document = document;
     this.root = document.getElementById('root');
     this.background = document.getElementById('tapzone');
-    
     this.batterycontainer = document.getElementById('batterycontainer');
-
     this.batteryicon = document.getElementById('batteryIcon');
-
-
     this.batterylevel = document.getElementById('batterylevel');
     
     this.heartratecontainer = document.getElementById('heartratecontainer');
-    
     this.hearticon = document.getElementById('heartIcon');
     this.heartrate = document.getElementById('heartrate');
     
@@ -43,6 +38,9 @@ export default class DomHelper {
     this.minutesCont = document.getElementById('minutesCont');
     this.minutesNext = document.getElementById('minutesNext');
     this.minutesNextCont = document.getElementById('minutesNextCont');
+
+  }
+}ont');
 
   }
 }

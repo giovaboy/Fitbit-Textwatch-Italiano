@@ -3,15 +3,10 @@ import document from "document";
 export default class Animator {
   
   constructor(domHelper) {
-   // this.animation = null;
     this.domHelper = domHelper;
   }
 
   handleTimeChange() {
-    //if (this.animation) {
-      //console.log(this.animation);
-    //  clearTimeout(this.animation);
-  //  }
     this.setupHourAnimation();
     this.setupMinuteAnimation();
   }
@@ -41,6 +36,10 @@ export default class Animator {
         });
         setTimeout(() => {
             this.domHelper.tens.text = this.domHelper.tensNext.text;
+            this.domHelper.minutes.text = this.domHelper.minutesNext.text;
+        }, 690);
+    }
+}ens.text = this.domHelper.tensNext.text;
             this.domHelper.minutes.text = this.domHelper.minutesNext.text;
         }, 690);
     }

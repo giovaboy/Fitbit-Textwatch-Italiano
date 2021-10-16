@@ -37,12 +37,11 @@ export default class SettingsManager {
 
       this.settings = {
         fgColor: this.settings.fgColor || '#FFFFFF',
+        healthColor: this.settings.healthColor || '#FFFFFF',
         bgColor: this.settings.bgColor || '#000000',
         hourColor: this.settings.hourColor || '#FFFFFF',
-        minColor: this.settings.minColor || '#FFFFFF',
-        showBattery: typeof this.settings.showBattery == 'boolean' ? this.settings.showBattery : true,
-        showBattery2: this.settings.showBattery2 || 0,
-        animationEnabled: true
+        minColor: this.settings.minColor || '#FFFFFF',        
+        showBattery2: this.settings.showBattery2 || { "selected": 0 }
       };
     }
 
@@ -70,8 +69,8 @@ export default class SettingsManager {
       this.domHelper.minutes.style.fill = this.settings.minColor;
       this.domHelper.minutesNext.style.fill = this.settings.minColor;
       this.domHelper.date.style.fill = this.settings.fgColor;
-      this.domHelper.heartrate.style.fill = this.settings.fgColor;
-      this.domHelper.stepcount.style.fill = this.settings.fgColor;
+      this.domHelper.heartrate.style.fill = this.settings.healthColor;
+      this.domHelper.stepcount.style.fill = this.settings.healthColor;
     }
   
     handleMessage(evt) {
@@ -83,6 +82,10 @@ export default class SettingsManager {
         this.settings.fgColor = evt.data.value;
         this.updateForeground();
       }
+      if (evt.data.key === 'healthColor') {
+        this.settings.healthColor = evt.data.value;
+        this.updateForeground();
+      }
       if (evt.data.key == 'hourColor') {
         this.settings.hourColor = evt.data.value;
         this.updateForeground();
@@ -90,10 +93,7 @@ export default class SettingsManager {
       if (evt.data.key == 'minColor') {
         this.settings.minColor = evt.data.value;
         this.updateForeground();
-      }
-      if (evt.data.key === 'showBattery') {
-        this.settings.showBattery = evt.data.value;
-      }
+      }      
       if (evt.data.key === 'showBattery2') {
         this.settings.showBattery2 = evt.data.value;
         
@@ -108,6 +108,7 @@ export default class SettingsManager {
         console.error(e);
       }
     }
+}}
 }esB.style.fill = this.settings.minColor;
         this.domHelper.minutesBNext.style.fill = this.settings.minColor;
         this.domHelper.date.style.fill = this.settings.fgColor;

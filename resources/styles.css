@@ -1,32 +1,21 @@
 .background {
   viewport-fill: #000000;
 }
-/*
-.foreground-fill            { fill: fb-white; }
-.background-fill            { fill: fb-black; }
 
-text {
-  fill: #ffffff;
-}
-
-textarea {
-  fill: #ffffff;
-}
-*/
 .hours {
   font-size: 58;
-  text-length: 20;
+  text-length: 12;
   font-family: Colfax-Bold;
 }
 
 .mins {
   font-size: 58;
-  text-length: 20;
+  text-length: 12;
   font-family: Colfax-Regular;
 }
 
 #hours {
-  text-length: 18;
+  text-length: 12;
   font-size: 58;
   font-family: Colfax-Bold;
   text-anchor: middle;
@@ -35,7 +24,7 @@ textarea {
 }
 
 #hoursNext {
-  text-length: 18;
+  text-length: 12;
   font-size: 58;
   font-family: Colfax-Bold;
   text-anchor: middle;
@@ -44,7 +33,7 @@ textarea {
 }
 
 #tens {
-  text-length: 18;
+  text-length: 12;
   font-size: 58;
   font-family: Colfax-Regular;
   text-anchor: middle;
@@ -53,7 +42,7 @@ textarea {
 }
 
 #tensNext {
-  text-length: 18;
+  text-length: 12;
   font-size: 58;
   font-family: Colfax-Regular;
   text-anchor: middle;
@@ -62,7 +51,7 @@ textarea {
 }
 
 #minutes {
-  text-length: 18;
+  text-length: 12;
   font-size: 58;
   font-family: Colfax-Regular;
   text-anchor: middle;
@@ -71,7 +60,7 @@ textarea {
 }
 
 #minutesNext {
-  text-length: 18;
+  text-length: 12;
   font-size: 58;
   font-family: Colfax-Regular;
   text-anchor: middle;
@@ -115,6 +104,22 @@ textarea {
   x: $+2;
   y: 97%;
   text-length: 4;
+  text-anchor: start;
+}
+
+#stepIcon {
+  x: 56%;
+  y: 97%;
+  text-length: 1;
+}
+
+#stepcount {
+  x: $+2;
+  y: 97%;
+  text-length: 6;
+  text-anchor: start;
+}
+h: 4;
   text-anchor: start;
 }
 

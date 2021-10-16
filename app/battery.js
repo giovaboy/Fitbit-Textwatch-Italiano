@@ -1,6 +1,6 @@
 import document from "document";
 import { battery } from 'power';
-import { charger } from 'power';
+//import { charger } from 'power';
 
 export default class BatteryUtil {
     constructor(domHelper, settingsManager) {
@@ -9,24 +9,21 @@ export default class BatteryUtil {
     }
 
     updateBattery() {
-      let v = this.settingsManager.settings.showBattery2.selected;
-        if ( (v == 1) || (v == 2 && battery.chargeLevel < 25) ) {      
-          this.domHelper.batterycontainer.style.display = "inline";
-          this.domHelper.batterylevel.text = Math.floor(battery.chargeLevel) + "%";
-        } else {
-          this.domHelper.batterycontainer.style.display = "none";
-
-        }
-    }
-} == 0) ? battery.chargeLevel : batteryMain * 10;
-        } else {
-            const batteryLevel = battery.chargeLevel;
-        }
-      
-        return batteryLevel;
+      if ( !battery.charging ) {
+        let v = this.settingsManager.settings.showBattery2.selected;
+          if ( (v == 1) || (v == 2 && battery.chargeLevel < 25) ) {      
+            this.domHelper.batterycontainer.style.display = "inline";
+            this.domHelper.batterylevel.text = Math.floor(battery.chargeLevel) + "%";
+          } else {
+            this.domHelper.batterycontainer.style.display = "none";
+          }
+      } else {
+        this.domHelper.batterycontainer.style.display = "inline";
+        this.domHelper.batterylevel.text = "in carica...";
+      }
     }
   
-    setBatteryLevel(level) {
+}l) {
         this.domHelper.batteryBar.width = Math.ceil(this.domHelper.root.width * (1 - (level / 100)));
         this.domHelper.batteryBar.x = Math.ceil(this.domHelper.root.width * (level / 100));
     }

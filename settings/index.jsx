@@ -45,20 +45,26 @@ const settings = (props) => {
          <Text>Grazie per aver installato questa clockface!</Text>
       </Section> 
       
-        <Section title={<Text>Colore sfondo</Text>}>
+        <Section title={<Text bold>Colore sfondo</Text>}>
           <ColorSelect settingsKey="bgColor" colors={colors} centered />
         </Section>
         
-        <Section title={<Text>Colore ora</Text>}>
+        <Section title={<Text bold>Colore ora</Text>}>
           <ColorSelect settingsKey="hourColor" colors={colors} centered />
         </Section>
         
-        <Section title={<Text>Colore minuti</Text>}>
+        <Section title={<Text bold>Colore minuti</Text>}>
           <ColorSelect settingsKey="minColor" colors={colors} centered />
         </Section>
         
-        <Section title={<Text>Colore data</Text>}>
+        <Section title={<Text bold>Colore data</Text>}>
           <ColorSelect settingsKey="fgColor" colors={colors} centered />
+        </Section>
+      
+      <Section title={<Text bold>Colore hr/passi</Text>}>
+
+          <ColorSelect settingsKey="healthColor" colors={colors} centered />
+
         </Section>
         
         
