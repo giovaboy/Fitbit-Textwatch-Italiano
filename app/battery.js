@@ -22,14 +22,5 @@ export default class BatteryUtil {
         this.domHelper.batterylevel.text = "in carica...";
       }
     }
-  
-}l) {
-        this.domHelper.batteryBar.width = Math.ceil(this.domHelper.root.width * (1 - (level / 100)));
-        this.domHelper.batteryBar.x = Math.ceil(this.domHelper.root.width * (level / 100));
-    }
-  
-    hideBattery() {
-        this.domHelper.batteryBar.x = this.domHelper.root.width;
-        this.domHelper.batteryBar.width = this.domHelper.root.width;
-    }
+
 }
