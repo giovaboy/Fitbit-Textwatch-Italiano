@@ -1,5 +1,3 @@
-import document from "document";
-
 export default class Animator {
   
   constructor(domHelper) {
@@ -20,7 +18,7 @@ export default class Animator {
       });
       setTimeout(() => {
           this.domHelper.hours.text = this.domHelper.hoursNext.text;
-      }, 690);//2000 = 2 secondi
+      }, 700);//2000 = 2 secondi
     }
 
     setupMinuteAnimation() {
@@ -37,27 +35,6 @@ export default class Animator {
         setTimeout(() => {
             this.domHelper.tens.text = this.domHelper.tensNext.text;
             this.domHelper.minutes.text = this.domHelper.minutesNext.text;
-        }, 690);
-    }
-}ens.text = this.domHelper.tensNext.text;
-            this.domHelper.minutes.text = this.domHelper.minutesNext.text;
-        }, 690);
-    }
-}.animate('activate');
-              this.domHelper.minutesNextCont.animate('activate');
-            }
-            if ( this.domHelper.minutesB.text != this.domHelper.minutesBNext.text ){
-              this.domHelper.minutesBCont.animate('activate');
-              this.domHelper.minutesBNextCont.animate('activate');
-            }
-        });
-            setTimeout(() => {
-                this.domHelper.tens.text = this.domHelper.tensNext.text;
-           // }, 500);
-            //setTimeout(() => {
-                this.domHelper.minutes.text = this.domHelper.minutesNext.text;
-                this.domHelper.minutesB.text = this.domHelper.minutesBNext.text;
-            }, 500);
-       // });
+        }, 700);
     }
 }

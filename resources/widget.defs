@@ -40,12 +40,3 @@
     </symbol>
   </defs>
 </svg>
- <g>
-  <text id="minutesBNext" class="upcoming minutes"/>
-  <animateTransform attributeType="translate" from="0%" to="-100%" begin="activate" final="restore" easing="ease-in-out" dur=".5"/>
- </g>
-</symbol>
-</defs>
-</svg>
-efs>
-</svg>

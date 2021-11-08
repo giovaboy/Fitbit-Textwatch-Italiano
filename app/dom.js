@@ -23,6 +23,9 @@ export default class DomHelper {
     this.stepcount = document.getElementById('stepcount');
 
     this.date = document.getElementById('date');
+    //this.dayname = document.getElementById('dayname');
+    //this.daydigit = document.getElementById('daydigit');
+    //this.monthname = document.getElementById('monthname');
 
     this.hours = document.getElementById('hours');
     this.hoursCont = document.getElementById('hoursCont');
@@ -38,9 +41,6 @@ export default class DomHelper {
     this.minutesCont = document.getElementById('minutesCont');
     this.minutesNext = document.getElementById('minutesNext');
     this.minutesNextCont = document.getElementById('minutesNextCont');
-
-  }
-}ont');
 
   }
 }

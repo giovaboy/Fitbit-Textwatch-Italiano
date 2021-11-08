@@ -1,4 +1,3 @@
-import document from "document";
 import { preferences } from "user-settings";
 import * as messaging from 'messaging';
 import * as fs from 'fs';
@@ -54,7 +53,6 @@ export default class SettingsManager {
     setSettings() {
       this.updateBackground();
       this.updateForeground();
-      //this.updateDim();
     }
   
     updateBackground() {
@@ -69,6 +67,9 @@ export default class SettingsManager {
       this.domHelper.minutes.style.fill = this.settings.minColor;
       this.domHelper.minutesNext.style.fill = this.settings.minColor;
       this.domHelper.date.style.fill = this.settings.fgColor;
+      //this.domHelper.dayname.fill = this.settings.fgColor;
+      //this.domHelper.daydigit.fill = this.settings.fgColor;
+      //this.domHelper.monthname.fill = this.settings.fgColor;
       this.domHelper.heartrate.style.fill = this.settings.healthColor;
       this.domHelper.stepcount.style.fill = this.settings.healthColor;
     }
@@ -107,65 +108,5 @@ export default class SettingsManager {
       } catch (e) {
         console.error(e);
       }
-    }
-}}
-}esB.style.fill = this.settings.minColor;
-        this.domHelper.minutesBNext.style.fill = this.settings.minColor;
-        this.domHelper.date.style.fill = this.settings.fgColor;
-        this.domHelper.heartrate.style.fill = this.settings.fgColor;
-        this.domHelper.stepcount.style.fill = this.settings.fgColor;
-        
-        if (this.settings.dimBattery) {
-            this.updateDim();
-        } else {
-            this.domHelper.batteryBar.style.fill = this.settings.fgColor;
-        }
-    }
-  
-    updateDim() {
-        if (this.settings.dimBattery) {
-            this.updateBatteryFill();
-        } else {
-            if (this.settings.fgColor) {
-                this.domHelper.batteryBar.style.fill = this.settings.fgColor;
-            }
-        }
-    }
-
-    handleMessage(evt) {
-        if (evt.data.key === 'bgColor') {
-            this.settings.bgColor = evt.data.value;
-            this.updateBackground();
-        }
-        if (evt.data.key === 'fgColor') {
-            this.settings.fgColor = evt.data.value;
-            this.updateForeground();
-        }
-        if (evt.data.key == 'hourColor') {
-            this.settings.hourColor = evt.data.value;
-            this.updateForeground();
-            }
-        if (evt.data.key == 'minColor') {
-            this.settings.minColor = evt.data.value;
-            this.updateForeground();
-            }
-        if (evt.data.key === 'showBattery') {
-            this.settings.showBattery = evt.data.value;
-        }
-        if (evt.data.key === 'dimBattery') {
-            this.settings.dimBattery = evt.data.value;
-            this.updateDim();
-        }
-        this.saveSettings();
-    }
-  
-    saveSettings() {
-      try {
-        fs.writeFileSync(SETTINGS_FILE, this.settings, SETTINGS_TYPE);
-      } catch (e) {
-        console.error(e);
-      }
-    }
-}     }
     }
 }
