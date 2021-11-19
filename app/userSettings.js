@@ -109,7 +109,7 @@ export default class SettingsManager {
         console.error(e);
       }
     }
-<<<<<<< HEAD
+}<<<<<< HEAD
 }is.domHelper.date.style.fill = this.settings.fgColor;
         this.domHelper.heartrate.style.fill = this.settings.fgColor;
         this.domHelper.stepcount.style.fill = this.settings.fgColor;

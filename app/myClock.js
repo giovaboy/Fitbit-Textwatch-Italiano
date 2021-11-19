@@ -137,7 +137,7 @@ export default class myClock {
         this.callback(today);
     }
   }
-<<<<<<< HEAD
+}<<<<<< HEAD
 } } else {
       // Setup animation
       this.animator.handleTimeChange();

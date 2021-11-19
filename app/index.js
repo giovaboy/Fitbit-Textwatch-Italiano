@@ -27,11 +27,11 @@ const onClockTick = (date) => {
     //console.log("JS memory: " + memory.js.peak + " - " + memory.js.used + "/" + memory.js.total);
     //memory.onmemorypressurechange = function(a) {
      // console.log("memoryPressureChange:" + JSON.stringify(a));
-<<<<<<< HEAD
    // }
 }
 
 const clock = new myClock(onClockTick, animator, domHelper, settingsManager);
+ngsManager);
 );
 
 =======

@@ -19,8 +19,10 @@ export default class BatteryUtil {
       } else {
         this.domHelper.batterycontainer.style.display = "inline";
         this.domHelper.batterylevel.text = "+";
-<<<<<<< HEAD
       }
+    }
+  
+} }
     }
   
 }el.text = "in carica...";

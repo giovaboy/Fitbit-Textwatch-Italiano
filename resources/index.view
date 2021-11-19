@@ -20,14 +20,13 @@
     <text id="stepcount" class="aux-data"></text>
   </svg>
   
-<<<<<<< HEAD
   <!--<svg id="datecontainer" class="container">-->
     <text id="date" class="aux-data"></text>
   <!--  <text id="dayname" class="aux-data"></text>
-=======
-  <!--<svg id="datecontainer" class="container">
-    <text id="date" class="aux-data"></text>
-    <text id="dayname" class="aux-data"></text>
+    <text id="daydigit" class="aux-data"></text>
+    <text id="monthname" class="aux-data"></text>
+  </svg>-->
+</svg>  <text id="dayname" class="aux-data"></text>
 >>>>>>> 1cfa0b60feffb07cd3cfff690780be43504a1d73
     <text id="daydigit" class="aux-data"></text>
     <text id="monthname" class="aux-data"></text>

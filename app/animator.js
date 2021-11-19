@@ -36,7 +36,8 @@ export default class Animator {
             this.domHelper.tens.text = this.domHelper.tensNext.text;
             this.domHelper.minutes.text = this.domHelper.minutesNext.text;
         }, 700);
-<<<<<<< HEAD
+    }
+} HEAD
     }
 }ext.text;
         }, 690);
