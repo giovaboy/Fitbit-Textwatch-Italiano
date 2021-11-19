@@ -19,20 +19,14 @@ export default class BatteryUtil {
       } else {
         this.domHelper.batterycontainer.style.display = "inline";
         this.domHelper.batterylevel.text = "+";
+<<<<<<< HEAD
       }
     }
   
 }el.text = "in carica...";
+=======
+>>>>>>> 1cfa0b60feffb07cd3cfff690780be43504a1d73
       }
     }
   
-}l) {
-        this.domHelper.batteryBar.width = Math.ceil(this.domHelper.root.width * (1 - (level / 100)));
-        this.domHelper.batteryBar.x = Math.ceil(this.domHelper.root.width * (level / 100));
-    }
-  
-    hideBattery() {
-        this.domHelper.batteryBar.x = this.domHelper.root.width;
-        this.domHelper.batteryBar.width = this.domHelper.root.width;
-    }
 }

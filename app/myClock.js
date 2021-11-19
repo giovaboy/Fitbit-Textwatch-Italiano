@@ -137,6 +137,7 @@ export default class myClock {
         this.callback(today);
     }
   }
+<<<<<<< HEAD
 } } else {
       // Setup animation
       this.animator.handleTimeChange();
@@ -153,4 +154,6 @@ export default class myClock {
         this.callback(today);
     }
   }
+=======
+>>>>>>> 1cfa0b60feffb07cd3cfff690780be43504a1d73
 }
