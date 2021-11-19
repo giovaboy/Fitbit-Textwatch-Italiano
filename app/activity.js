@@ -63,7 +63,4 @@ export default class HealthMonitor {
       this.hrm.stop();
     }
   }  
-}  this.hrm.stop();
-    }
-  }  
 }

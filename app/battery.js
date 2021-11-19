@@ -22,13 +22,4 @@ export default class BatteryUtil {
       }
     }
   
-} }
-    }
-  
-}el.text = "in carica...";
-=======
->>>>>>> 1cfa0b60feffb07cd3cfff690780be43504a1d73
-      }
-    }
-  
 }

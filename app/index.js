@@ -31,12 +31,3 @@ const onClockTick = (date) => {
 }
 
 const clock = new myClock(onClockTick, animator, domHelper, settingsManager);
-ngsManager);
-);
-
-=======
->>>>>>> 1cfa0b60feffb07cd3cfff690780be43504a1d73
-   // }
-}
-
-const clock = new myClock(onClockTick, animator, domHelper, settingsManager);

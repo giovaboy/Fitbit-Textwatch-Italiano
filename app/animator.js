@@ -37,32 +37,4 @@ export default class Animator {
             this.domHelper.minutes.text = this.domHelper.minutesNext.text;
         }, 700);
     }
-} HEAD
-    }
-}ext.text;
-        }, 690);
-    }
-}ens.text = this.domHelper.tensNext.text;
-            this.domHelper.minutes.text = this.domHelper.minutesNext.text;
-        }, 690);
-    }
-}.animate('activate');
-              this.domHelper.minutesNextCont.animate('activate');
-            }
-            if ( this.domHelper.minutesB.text != this.domHelper.minutesBNext.text ){
-              this.domHelper.minutesBCont.animate('activate');
-              this.domHelper.minutesBNextCont.animate('activate');
-            }
-        });
-            setTimeout(() => {
-                this.domHelper.tens.text = this.domHelper.tensNext.text;
-           // }, 500);
-            //setTimeout(() => {
-                this.domHelper.minutes.text = this.domHelper.minutesNext.text;
-                this.domHelper.minutesB.text = this.domHelper.minutesBNext.text;
-            }, 500);
-       // });
-=======
->>>>>>> 1cfa0b60feffb07cd3cfff690780be43504a1d73
-    }
 }

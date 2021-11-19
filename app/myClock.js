@@ -137,23 +137,4 @@ export default class myClock {
         this.callback(today);
     }
   }
-}<<<<<< HEAD
-} } else {
-      // Setup animation
-      this.animator.handleTimeChange();
-    }
-
-    if (this.callback) {
-        this.callback(today);
-    }
-  }
-}tor.handleTimeChange();
-    }
-
-    if (this.callback) {
-        this.callback(today);
-    }
-  }
-=======
->>>>>>> 1cfa0b60feffb07cd3cfff690780be43504a1d73
 }
