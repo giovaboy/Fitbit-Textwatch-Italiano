@@ -1,5 +1,3 @@
-import document from "document";
-
 export default class Animator {
   
   constructor(domHelper) {
@@ -20,7 +18,7 @@ export default class Animator {
       });
       setTimeout(() => {
           this.domHelper.hours.text = this.domHelper.hoursNext.text;
-      }, 690);//2000 = 2 secondi
+      }, 700);//2000 = 2 secondi
     }
 
     setupMinuteAnimation() {
@@ -37,6 +35,9 @@ export default class Animator {
         setTimeout(() => {
             this.domHelper.tens.text = this.domHelper.tensNext.text;
             this.domHelper.minutes.text = this.domHelper.minutesNext.text;
+        }, 700);
+    }
+}ext.text;
         }, 690);
     }
 }ens.text = this.domHelper.tensNext.text;

@@ -1,12 +1,10 @@
 import clock from "clock";
 import { display } from "display";
 import { me } from "appbit";
-import document from 'document';
 import { preferences } from "user-settings";
 import NumberToText from '../common/numberToText';
-import * as util from "../common/utils";
 
-const DEBUG = false;
+//const DEBUG = false;
 
 export default class myClock {
   
@@ -22,13 +20,7 @@ export default class myClock {
     this.domHelper = domHelper;
     this.settingsManager = settingsManager;
   }
-      
-/*
-  forceUpdate() {
-    this.isFresh = true;
-    this.doTick();
-  }
-*/
+  
   doTick(event) {
     //if (DEBUG) console.log(this.isFresh);
     //if (DEBUG) console.log(this.callback);
@@ -137,6 +129,15 @@ export default class myClock {
      // if (DEBUG) { this.domHelper.minutesB.text = secInt; }
       this.isFresh = false;
     } else {
+      // Setup animation
+      this.animator.handleTimeChange();
+    }
+
+    if (this.callback) {
+        this.callback(today);
+    }
+  }
+} } else {
       // Setup animation
       this.animator.handleTimeChange();
     }

@@ -72,14 +72,43 @@
   font-size: 24;
   font-family: Colfax-Regular;
 }
-
+/*
+#datecontainer {
+  x: 10%;
+  y: 86%-24;
+  width: 80%;
+  height: 24;
+  text-anchor: middle;
+}
+*/
 #date {
   x: 50%;
   y: 86%;
-  text-length: 30;
+  text-length: 22;
   text-anchor: middle;
 }
+/*
+#dayname {
+  x: 50%;
 
+  y: 86%;
+  fill: #ffffff;
+  text-overflow: clip;
+  text-length:10;
+}
+#daydigit {
+  y: 86%;
+  fill: #ffffff;
+  text-length: 2;
+  font-family: Colfax-Bold;
+}
+#monthname {
+  y: 86%;
+  fill: #ffffff;
+  text-anchor: start;
+  text-length: 10;
+}
+*/
 #batteryIcon {
   x:22%;
   y:10%;
@@ -103,23 +132,7 @@
 #heartrate {
   x: $+2;
   y: 97%;
-  text-length: 4;
-  text-anchor: start;
-}
-
-#stepIcon {
-  x: 56%;
-  y: 97%;
-  text-length: 1;
-}
-
-#stepcount {
-  x: $+2;
-  y: 97%;
-  text-length: 6;
-  text-anchor: start;
-}
-h: 4;
+  text-length: 3;
   text-anchor: start;
 }
 

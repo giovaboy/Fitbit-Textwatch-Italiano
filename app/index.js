@@ -1,5 +1,5 @@
 import { display } from "display";
-import { me } from "appbit";
+//import { me } from "appbit";
 //import { memory } from "system";
 
 import myClock from './myClock';
@@ -9,9 +9,6 @@ import HealthMonitor from './activity';
 import Animator from './animator';
 import SettingsManager from './userSettings';
 import DomHelper from './dom';
-
-import NumberToText from '../common/numberToText';
-import * as util from "../common/utils";
 
 const domHelper = new DomHelper();
 const animator = new Animator(domHelper);
@@ -29,8 +26,12 @@ const onClockTick = (date) => {
   }
     //console.log("JS memory: " + memory.js.peak + " - " + memory.js.used + "/" + memory.js.total);
     //memory.onmemorypressurechange = function(a) {
-
      // console.log("memoryPressureChange:" + JSON.stringify(a));
+   // }
+}
+
+const clock = new myClock(onClockTick, animator, domHelper, settingsManager);
+);
 
    // }
 }

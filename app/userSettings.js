@@ -1,4 +1,3 @@
-import document from "document";
 import { preferences } from "user-settings";
 import * as messaging from 'messaging';
 import * as fs from 'fs';
@@ -54,7 +53,6 @@ export default class SettingsManager {
     setSettings() {
       this.updateBackground();
       this.updateForeground();
-      //this.updateDim();
     }
   
     updateBackground() {
@@ -69,6 +67,9 @@ export default class SettingsManager {
       this.domHelper.minutes.style.fill = this.settings.minColor;
       this.domHelper.minutesNext.style.fill = this.settings.minColor;
       this.domHelper.date.style.fill = this.settings.fgColor;
+      //this.domHelper.dayname.fill = this.settings.fgColor;
+      //this.domHelper.daydigit.fill = this.settings.fgColor;
+      //this.domHelper.monthname.fill = this.settings.fgColor;
       this.domHelper.heartrate.style.fill = this.settings.healthColor;
       this.domHelper.stepcount.style.fill = this.settings.healthColor;
     }
@@ -108,10 +109,7 @@ export default class SettingsManager {
         console.error(e);
       }
     }
-}}
-}esB.style.fill = this.settings.minColor;
-        this.domHelper.minutesBNext.style.fill = this.settings.minColor;
-        this.domHelper.date.style.fill = this.settings.fgColor;
+}is.domHelper.date.style.fill = this.settings.fgColor;
         this.domHelper.heartrate.style.fill = this.settings.fgColor;
         this.domHelper.stepcount.style.fill = this.settings.fgColor;
         

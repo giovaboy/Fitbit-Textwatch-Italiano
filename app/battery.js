@@ -1,4 +1,3 @@
-import document from "document";
 import { battery } from 'power';
 //import { charger } from 'power';
 
@@ -19,7 +18,11 @@ export default class BatteryUtil {
           }
       } else {
         this.domHelper.batterycontainer.style.display = "inline";
-        this.domHelper.batterylevel.text = "in carica...";
+        this.domHelper.batterylevel.text = "+";
+      }
+    }
+  
+}el.text = "in carica...";
       }
     }
   

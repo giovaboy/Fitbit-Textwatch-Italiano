@@ -1,5 +1,4 @@
 import { me } from "appbit";
-import document from "document";
 import { today } from 'user-activity';
 import { HeartRateSensor } from 'heart-rate';
 import { BodyPresenceSensor } from "body-presence";
@@ -46,7 +45,7 @@ export default class HealthMonitor {
   updateStepData() {
     if (me.permissions.granted("access_activity")) {
       let metrics = today.adjusted;
-      if ( metrics['steps']) {
+      if ( metrics['steps'] ) {
         this.domHelper.stepcount.text = metrics['steps'];
       } else {
         this.domHelper.stepcount.text = '';
@@ -62,6 +61,9 @@ export default class HealthMonitor {
     if (!display.aodActive && display.on) {
     }else{
       this.hrm.stop();
+    }
+  }  
+}  this.hrm.stop();
     }
   }  
 }

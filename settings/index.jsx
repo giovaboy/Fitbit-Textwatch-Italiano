@@ -42,7 +42,7 @@ const settings = (props) => {
   return (
     <Page>
       <Section title={<Text bold align="center">Text Watch Italiano</Text>}>
-         <Text>Grazie per aver installato questa clockface!</Text>
+         <Text>Grazie per aver installato questa watchface!</Text>
       </Section> 
       
         <Section title={<Text bold>Colore sfondo</Text>}>
