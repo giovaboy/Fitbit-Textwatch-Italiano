@@ -2,14 +2,14 @@ import clock from "clock";
 import { display } from "display";
 import { me } from "appbit";
 import { preferences } from "user-settings";
-import NumberToText from '../common/numberToText';
+import NumberToText from "../common/numberToText";
 
 //const DEBUG = false;
 
 export default class myClock {
   
   constructor(callback, animator, domHelper, settingsManager) {
-    clock.granularity = 'minutes';
+    clock.granularity = "minutes";
     clock.ontick = () => {
       this.doTick();
     };
@@ -19,6 +19,9 @@ export default class myClock {
     this.animator = animator;
     this.domHelper = domHelper;
     this.settingsManager = settingsManager;
+    this.doTick();
+    
+    //if (DEBUG) console.log("constructor called");
   }
   
   doTick(event) {
@@ -61,6 +64,7 @@ export default class myClock {
           this.domHelper.date.style.display = "inline";
           this.domHelper.heartratecontainer.style.display = "inline";
           this.domHelper.stepcontainer.style.display = "inline";
+          this.domHelper.floorcontainer.style.display = "none";
             
         } else {
           this.domHelper.background.style.fill = '#000000';
@@ -74,7 +78,8 @@ export default class myClock {
 
           this.domHelper.date.style.display = "none";
           this.domHelper.heartratecontainer.style.display = "none";
-          this.domHelper.stepcontainer.style.display = "none";
+          this.domHelper.healthcontainer.style.display = "none";
+          
           this.isFresh = true;
         }
       });
@@ -88,21 +93,24 @@ export default class myClock {
         }
       });
     } 
-    
-    /*
-     //TEST
-          if(minuteInt % 2 == 1) {
-            this.domHelper.background.style.fill = this.settingsManager.settings.bgColor;
+       
+    if ( this.isFresh ) {
+      // Skip animation
+      this.domHelper.hours.text = currentHourString;
+      this.domHelper.tens.text = currentMinuteParts[0] + ' ' + currentMinuteParts[1];
+      this.domHelper.minutes.text = currentMinuteParts[2] || '';
+     // if (DEBUG) { this.domHelper.minutesB.text = secInt; }
+      this.isFresh = false;
+    } else {
+      // Setup animation
+      this.animator.handleTimeChange();
+    }
 
-            this.domHelper.hours.style.fontFamily = "Colfax-Bold";
-            this.domHelper.tens.style.fontFamily = "Colfax-Regular";
-            this.domHelper.minutes.style.fontFamily = "Colfax-Regular";
-
-            this.domHelper.hours.style.fill = this.settingsManager.settings.hourColor;
-            this.domHelper.tens.style.fill = this.settingsManager.settings.minColor;
-            this.domHelper.minutes.style.fill = this.settingsManager.settings.minColor;
-
-            this.domHelper.date.style.display = "inline";
+    if (this.callback) {
+        this.callback(today);
+    }
+  }
+}e.display = "inline";
             this.domHelper.heartratecontainer.style.display = "inline";
             this.domHelper.stepcontainer.style.display = "inline";
           } else {

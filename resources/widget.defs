@@ -2,6 +2,9 @@
   <defs>
     <link rel="stylesheet" href="styles.css"/>
     <link rel="import" href="/mnt/sysassets/system_widget.defs"/>
+    <link rel="import" href="/mnt/sysassets/widgets/baseview_widget.defs" />
+    <link rel="import" href="/mnt/sysassets/widgets/cycleview_widget.defs" />
+  
     <symbol id="hoursGroup">
       <g>
         <text id="hours" class="hours hours-current"/>

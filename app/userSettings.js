@@ -40,7 +40,8 @@ export default class SettingsManager {
         bgColor: this.settings.bgColor || '#000000',
         hourColor: this.settings.hourColor || '#FFFFFF',
         minColor: this.settings.minColor || '#FFFFFF',        
-        showBattery2: this.settings.showBattery2 || { "selected": 0 }
+        showBattery2: this.settings.showBattery2 || { "selected": 0 },
+        health: this.settings.health || { "selected": 0 }
       };
     }
 
@@ -67,11 +68,11 @@ export default class SettingsManager {
       this.domHelper.minutes.style.fill = this.settings.minColor;
       this.domHelper.minutesNext.style.fill = this.settings.minColor;
       this.domHelper.date.style.fill = this.settings.fgColor;
-      //this.domHelper.dayname.fill = this.settings.fgColor;
-      //this.domHelper.daydigit.fill = this.settings.fgColor;
-      //this.domHelper.monthname.fill = this.settings.fgColor;
       this.domHelper.heartrate.style.fill = this.settings.healthColor;
       this.domHelper.stepcount.style.fill = this.settings.healthColor;
+      this.domHelper.distancecount.style.fill = this.settings.healthColor;
+      this.domHelper.floorcount.style.fill = this.settings.healthColor;
+      this.domHelper.caloriescount.style.fill = this.settings.healthColor;
     }
   
     handleMessage(evt) {

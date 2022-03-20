@@ -1,5 +1,4 @@
-//import document from "document";
-import NumberToText from '../common/numberToText';
+import NumberToText from "../common/numberToText";
 import * as util from "../common/utils";
 
 export default class DateManager {
@@ -30,6 +29,9 @@ while (this.domHelper.dayname.textOverflowing) {
     
     //this.domHelper.daydigit.x = this.domHelper.dayname.x + this.domHelper.dayname.getBBox().width + 4;
     //this.domHelper.monthname.x = this.domHelper.daydigit.x + this.domHelper.daydigit.getBBox().width + 4;
+ 
+  }
+}ydigit.getBBox().width + 4;
  
   }
 }

@@ -61,16 +61,12 @@ const settings = (props) => {
           <ColorSelect settingsKey="fgColor" colors={colors} centered />
         </Section>
       
-      <Section title={<Text bold>Colore hr/passi</Text>}>
+        <Section title={<Text bold>Colore hr/dati salute</Text>}>
+            <ColorSelect settingsKey="healthColor" colors={colors} centered />
+          </Section>
 
-          <ColorSelect settingsKey="healthColor" colors={colors} centered />
-
-        </Section>
+        <Section title={<Text bold align="center">Altro</Text>}>
         
-        
-      <Section title={<Text bold align="center">Altro</Text>}>
-        
-        {/*<Toggle label="Mostra Batteria" settingsKey="showBattery" /> */}
         <Select label={`Mostra stato della batteria`}
                 settingsKey="showBattery2"
                 options={[
@@ -78,9 +74,14 @@ const settings = (props) => {
                   {name:"Sì"},
                   {name:"Se Sotto al 25%"}
                 ]}/>
-        {/*<Toggle label="Dim Battery Bar" settingsKey="dimBattery" />*/} 
         
         <Button label="Reset impostazioni" onClick={() => props.settingsStorage.clear()} />
+      </Section>
+    </Page>
+  )
+}
+
+registerSettingsPage(settings);     <Button label="Reset impostazioni" onClick={() => props.settingsStorage.clear()} />
       </Section>
     </Page>
   )

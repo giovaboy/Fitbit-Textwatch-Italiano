@@ -1,5 +1,4 @@
-import { battery } from 'power';
-//import { charger } from 'power';
+import { battery } from "power";
 
 export default class BatteryUtil {
     constructor(domHelper, settingsManager) {
@@ -19,6 +18,10 @@ export default class BatteryUtil {
       } else {
         this.domHelper.batterycontainer.style.display = "inline";
         this.domHelper.batterylevel.text = "+";
+      }
+    }
+  
+}evel.text = "+";
       }
     }
   

@@ -70,6 +70,8 @@
 
 .aux-data {
   font-size: 24;
+  line-increment: 24;
+  display-align: middle;
   font-family: Colfax-Regular;
 }
 /*
@@ -136,13 +138,59 @@
   text-anchor: start;
 }
 
+#healthcontainer {
+  width: 50%;
+  height: 31;
+  x: 50%;
+  y: 88%;
+}
+
 #stepIcon {
-  x: 56%;
+  x: 12%;/*56%;*/
+  y: 90%;
+  text-length: 1;
+  display-align: end;
+}
+
+#stepcount {
+  x: $+2;
+  y: 97%;
+  text-length: 6;
+  text-anchor: start;
+}
+
+#distanceIcon {
+  x: 12%;
+  y: 90%;
+  text-length: 1;
+}
+
+#distancecount {
+  x: $+2;
+  y: 97%;
+  text-length: 6;
+  text-anchor: start;
+}
+#floorIcon {
+  x: 12%;
   y: 97%;
   text-length: 1;
 }
 
-#stepcount {
+#floorcount {
+  x: $+2;
+  y: 97%;
+  text-length: 4;
+  text-anchor: start;
+}
+
+#caloriesIcon {
+  x: 12%;
+  y: 90%;
+  text-length: 1;
+}
+
+#caloriescount {
   x: $+2;
   y: 97%;
   text-length: 6;

@@ -18,10 +18,22 @@ export default class DomHelper {
     this.hearticon = document.getElementById('heartIcon');
     this.heartrate = document.getElementById('heartrate');
     
-    this.stepcontainer = document.getElementById('stepcontainer');
+    this.healthCycle = document.getElementById("healthCycle");
+    this.healthcontainer = document.getElementById('healthcontainer');
     this.stepicon = document.getElementById('stepIcon');
     this.stepcount = document.getElementById('stepcount');
+    
+    this.distanceicon = document.getElementById('distanceIcon');
+    this.distancecount = document.getElementById('distancecount');
 
+    //this.floorcontainer = document.getElementById('floorcontainer');
+    this.flooricon = document.getElementById('floorIcon');
+    this.floorcount = document.getElementById('floorcount');
+    
+    //this.caloriescontainer = document.getElementById('caloriescontainer');
+    this.caloriesicon = document.getElementById('caloriesIcon');
+    this.caloriescount = document.getElementById('caloriescount');
+    
     this.date = document.getElementById('date');
     //this.dayname = document.getElementById('dayname');
     //this.daydigit = document.getElementById('daydigit');
@@ -41,6 +53,5 @@ export default class DomHelper {
     this.minutesCont = document.getElementById('minutesCont');
     this.minutesNext = document.getElementById('minutesNext');
     this.minutesNextCont = document.getElementById('minutesNextCont');
-
   }
 }
