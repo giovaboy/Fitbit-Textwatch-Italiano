@@ -21,8 +21,4 @@ export default class BatteryUtil {
       }
     }
   
-}evel.text = "+";
-      }
-    }
-  
 }

@@ -41,7 +41,7 @@ export default class SettingsManager {
         hourColor: this.settings.hourColor || '#FFFFFF',
         minColor: this.settings.minColor || '#FFFFFF',        
         showBattery2: this.settings.showBattery2 || { "selected": 0 },
-        health: this.settings.health || { "selected": 0 }
+        showMoon: this.settings.showMoon || true
       };
     }
 

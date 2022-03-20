@@ -74,14 +74,10 @@ const settings = (props) => {
                   {name:"Sì"},
                   {name:"Se Sotto al 25%"}
                 ]}/>
-        
+          
+        <Toggle settingsKey="showMoon" label="Mostra fasi lunari" />
+          
         <Button label="Reset impostazioni" onClick={() => props.settingsStorage.clear()} />
-      </Section>
-    </Page>
-  )
-}
-
-registerSettingsPage(settings);     <Button label="Reset impostazioni" onClick={() => props.settingsStorage.clear()} />
       </Section>
     </Page>
   )

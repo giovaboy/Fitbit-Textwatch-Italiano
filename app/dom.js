@@ -26,18 +26,16 @@ export default class DomHelper {
     this.distanceicon = document.getElementById('distanceIcon');
     this.distancecount = document.getElementById('distancecount');
 
-    //this.floorcontainer = document.getElementById('floorcontainer');
     this.flooricon = document.getElementById('floorIcon');
     this.floorcount = document.getElementById('floorcount');
     
-    //this.caloriescontainer = document.getElementById('caloriescontainer');
     this.caloriesicon = document.getElementById('caloriesIcon');
     this.caloriescount = document.getElementById('caloriescount');
     
     this.date = document.getElementById('date');
-    //this.dayname = document.getElementById('dayname');
-    //this.daydigit = document.getElementById('daydigit');
-    //this.monthname = document.getElementById('monthname');
+    
+    this.moonCycle = document.getElementById("moonCycle");
+    this.mooncontainer = document.getElementById('mooncontainer');
 
     this.hours = document.getElementById('hours');
     this.hoursCont = document.getElementById('hoursCont');

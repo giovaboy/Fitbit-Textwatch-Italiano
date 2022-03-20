@@ -110,39 +110,4 @@ export default class myClock {
         this.callback(today);
     }
   }
-}e.display = "inline";
-            this.domHelper.heartratecontainer.style.display = "inline";
-            this.domHelper.stepcontainer.style.display = "inline";
-          } else {
-             this.domHelper.background.style.fill = '#000000';
-            this.domHelper.hours.style.fontFamily = "Colfax-Light";
-            this.domHelper.tens.style.fontFamily = "Colfax-Light";
-            this.domHelper.minutes.style.fontFamily = "Colfax-Light";
-            
-            this.domHelper.hours.style.fill = '#FFFFFF';
-            this.domHelper.tens.style.fill = '#FFFFFF';
-            this.domHelper.minutes.style.fill = '#FFFFFF';
-            
-            this.domHelper.date.style.display = "none";
-            this.domHelper.heartratecontainer.style.display = "none";
-            this.domHelper.stepcontainer.style.display = "none";
-            this.isFresh = true;            
-          }
-    */
-    if ( this.isFresh ) {
-      // Skip animation
-      this.domHelper.hours.text = currentHourString;
-      this.domHelper.tens.text = currentMinuteParts[0] + ' ' + currentMinuteParts[1];
-      this.domHelper.minutes.text = currentMinuteParts[2] || '';
-     // if (DEBUG) { this.domHelper.minutesB.text = secInt; }
-      this.isFresh = false;
-    } else {
-      // Setup animation
-      this.animator.handleTimeChange();
-    }
-
-    if (this.callback) {
-        this.callback(today);
-    }
-  }
 }

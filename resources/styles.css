@@ -112,14 +112,14 @@
 }
 */
 #batteryIcon {
-  x:22%;
-  y:10%;
+  x: 38%;
+  y: 6%;
   text-length:1;
 }
 
 #batterylevel {
   x: $+2;
-  y: 10%;
+  y: 6%;
   text-length: 4;
   text-anchor: start;
   fill: #ffffff;
@@ -195,4 +195,18 @@
   y: 97%;
   text-length: 6;
   text-anchor: start;
+}
+
+#mooncontainer {
+  width: 26;
+  height: 24;
+  x: 50%-13;
+  y: 100%-30;
+}
+
+.moon-item text {
+  font-size: 24;
+  line-increment: 24;
+  text-length: 1;
+  display-align: start;
 }

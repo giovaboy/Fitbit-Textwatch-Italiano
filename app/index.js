@@ -1,7 +1,5 @@
 import { display } from "display";
 
-import moonPhase from "./moon"
-
 import myClock from "./myClock";
 import DateUpdater from "./date";
 import BatteryUpdater from "./battery";
@@ -20,13 +18,13 @@ const batteryUpdater = new BatteryUpdater(domHelper, settingsManager);
 const heartData = new HeartMonitor(domHelper);
 const healthData = new Health(domHelper);
 
+
 const onClockTick = (date) => {
   if (!display.aodActive && display.on) {
     dateUpdater.updateDate(date);
     batteryUpdater.updateBattery();
     heartData.updateHeart();
     healthData.updateHealthData();
-   console.log( moonPhase(date.year, date.month, date.day));
   }
     //console.log("JS memory: " + memory.js.peak + " - " + memory.js.used + "/" + memory.js.total);
     //memory.onmemorypressurechange = function(a) {

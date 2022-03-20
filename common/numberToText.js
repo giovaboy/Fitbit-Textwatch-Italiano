@@ -1,7 +1,7 @@
 export default class NumberToText {
   static map() {
     return {
-      midnight: 'mezzanotte',
+      mezzanotte: 'mezzanotte',
       mezzogiorno: 'mezzogiorno',
       una: 'una',
       e: 'e ',
@@ -78,7 +78,7 @@ export default class NumberToText {
   static getHour(input) {
     switch (input){
       case 0:
-        return this.map()['midnight'];
+        return this.map()['mezzanotte'];
       case 12:
         return this.map()['mezzogiorno'];
       case 1:
