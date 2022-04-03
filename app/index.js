@@ -21,15 +21,15 @@ const healthData = new Health(domHelper);
 
 const onClockTick = (date) => {
   if (!display.aodActive && display.on) {
-    dateUpdater.updateDate(date);
-    batteryUpdater.updateBattery();
     heartData.updateHeart();
     healthData.updateHealthData();
   }
-    //console.log("JS memory: " + memory.js.peak + " - " + memory.js.used + "/" + memory.js.total);
-    //memory.onmemorypressurechange = function(a) {
-     // console.log("memoryPressureChange:" + JSON.stringify(a));
-   // }
+  /*
+    console.log("JS memory: " + memory.js.peak + " - " + memory.js.used + "/" + memory.js.total);
+    memory.onmemorypressurechange = function(a) {
+      console.log("memoryPressureChange:" + JSON.stringify(a));
+    }
+  */
 }
 
-const clock = new myClock(onClockTick, animator, domHelper, settingsManager);
+const clock = new myClock(onClockTick, animator, domHelper, dateUpdater, settingsManager);

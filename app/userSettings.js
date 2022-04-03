@@ -28,10 +28,10 @@ export default class SettingsManager {
     getSavedSettings() {
       try {
         this.settings = fs.readFileSync(SETTINGS_FILE, SETTINGS_TYPE);
-        console.info('read settings', JSON.stringify(this.settings));
+        //console.info('read settings', JSON.stringify(this.settings));
       } catch (e) {
         this.settings = {};
-        console.info('fresh settings');
+        //console.info('fresh settings');
       }
 
       this.settings = {
@@ -40,8 +40,8 @@ export default class SettingsManager {
         bgColor: this.settings.bgColor || '#000000',
         hourColor: this.settings.hourColor || '#FFFFFF',
         minColor: this.settings.minColor || '#FFFFFF',        
-        showBattery2: this.settings.showBattery2 || { "selected": 0 },
-        showMoon: this.settings.showMoon || true
+        showBattery: this.settings.showBattery || { "selected": 0 }
+        //showMoon: this.settings.showMoon || false
       };
     }
 
@@ -96,8 +96,8 @@ export default class SettingsManager {
         this.settings.minColor = evt.data.value;
         this.updateForeground();
       }      
-      if (evt.data.key === 'showBattery2') {
-        this.settings.showBattery2 = evt.data.value;
+      if (evt.data.key === 'showBattery') {
+        this.settings.showBattery = evt.data.value;
         
       }
       this.saveSettings();

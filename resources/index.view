@@ -15,39 +15,6 @@
     <text id="heartrate" class="aux-data"></text>
   </svg>
 
-
-  <svg id="mooncontainer" class="container">
-   <use id="moonCycle" href="#cycleview">
-      <use href="#cycleview-item" class="moon-item">        
-        <text id="0Icon" class="aux-data">🌑</text>
-      </use>
-      <use href="#cycleview-item" class="moon-item">        
-        <text id="1Icon" class="aux-data">🌒</text>
-      </use>
-      <use href="#cycleview-item" class="moon-item">        
-        <text id="2Icon" class="aux-data">🌓</text>
-      </use>
-      <use href="#cycleview-item" class="moon-item">        
-        <text id="3Icon" class="aux-data">🌔</text>
-      </use>
-      <use href="#cycleview-item" class="moon-item">        
-        <text id="4Icon" class="aux-data">🌕</text>
-      </use>
-      <use href="#cycleview-item" class="moon-item">        
-        <text id="5Icon" class="aux-data">🌖</text>
-      </use>
-      <use href="#cycleview-item" class="moon-item">        
-        <text id="6Icon" class="aux-data">🌗</text>
-      </use>
-      <use href="#cycleview-item" class="moon-item">        
-        <text id="7Icon" class="aux-data">🌘</text>
-      </use>
-      <use href="#cycleview-item" class="moon-item">        
-        <text id="8Icon" class="aux-data">🌑</text>
-      </use>
-    </use>
-  </svg>
-    
   <svg id="healthcontainer" class="container">
     <use id="healthCycle" href="#cycleview">
       <use href="#cycleview-item" class="cycle-item">        
@@ -69,10 +36,5 @@
     </use>
   </svg>
   
-  <!--<svg id="datecontainer" class="container">-->
-    <text id="date" class="aux-data"></text>
-  <!--  <text id="dayname" class="aux-data"></text>
-    <text id="daydigit" class="aux-data"></text>
-    <text id="monthname" class="aux-data"></text>
-  </svg>-->
+  <text id="date" class="aux-data"></text>
 </svg>

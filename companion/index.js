@@ -8,15 +8,14 @@ const KEY_HEALTHCOLOR = 'healthColor';
 const HOUR_FOREGROUND = 'hourColor';
 const MIN_FOREGROUND = 'minColor';
 const KEY_SHOW_BATTERY2 = 'showBattery2';
-const KEY_SHOW_MOON = 'showMoon';
 
 settingsStorage.onchange = (evt) => {
-  console.log('settings onchange', JSON.stringify(evt));
+  //console.log('settings onchange', JSON.stringify(evt));
   sendValue(evt.key, evt.newValue);
 }
 
 const sendValue = (key, val) => {
-  console.info(key, val);
+  //console.info(key, val);
   if (val !== null) {
     sendSettingData({
       key: key,
@@ -32,18 +31,17 @@ const updateAll = () => {
   sendValue(HOUR_FOREGROUND, settingsStorage.getItem(HOUR_FOREGROUND));
   sendValue(MIN_FOREGROUND, settingsStorage.getItem(MIN_FOREGROUND));
   sendValue(KEY_SHOW_BATTERY2, settingsStorage.getItem(KEY_SHOW_BATTERY2));
-  sendValue(KEY_SHOW_MOON, settingsStorage.getItem(KEY_SHOW_MOON));
 }
 
 const sendSettingData = (data) => {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     messaging.peerSocket.send(data);
-  } else {
-    console.log('no peerSocket connection');
+  //} else {
+    //console.log('no peerSocket connection');
   }
 }
 
 if (me.launchReasons.settingsChanged) {
-  console.log('settings changed without companion');
+  //console.log('settings changed without companion');
   updateAll();
 }

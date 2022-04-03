@@ -68,14 +68,12 @@ const settings = (props) => {
         <Section title={<Text bold align="center">Altro</Text>}>
         
         <Select label={`Mostra stato della batteria`}
-                settingsKey="showBattery2"
+                settingsKey="showBattery"
                 options={[
                   {name:"No"},
                   {name:"Sì"},
                   {name:"Se Sotto al 25%"}
                 ]}/>
-          
-        <Toggle settingsKey="showMoon" label="Mostra fasi lunari" />
           
         <Button label="Reset impostazioni" onClick={() => props.settingsStorage.clear()} />
       </Section>

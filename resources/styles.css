@@ -28,7 +28,7 @@
   font-size: 58;
   font-family: Colfax-Bold;
   text-anchor: middle;
-  x: 180%;
+  x: 150%;
   y: 32%;
 }
 
@@ -46,7 +46,7 @@
   font-size: 58;
   font-family: Colfax-Regular;
   text-anchor: middle;
-  x: 180%;
+  x: 150%;
   y: 50%;
 }
 
@@ -64,7 +64,7 @@
   font-size: 58;
   font-family: Colfax-Regular;
   text-anchor: middle;
-  x: 180%;
+  x: 150%;
   y: 68%;
 }
 
@@ -74,43 +74,14 @@
   display-align: middle;
   font-family: Colfax-Regular;
 }
-/*
-#datecontainer {
-  x: 10%;
-  y: 86%-24;
-  width: 80%;
-  height: 24;
-  text-anchor: middle;
-}
-*/
+
 #date {
   x: 50%;
   y: 86%;
   text-length: 22;
   text-anchor: middle;
 }
-/*
-#dayname {
-  x: 50%;
 
-  y: 86%;
-  fill: #ffffff;
-  text-overflow: clip;
-  text-length:10;
-}
-#daydigit {
-  y: 86%;
-  fill: #ffffff;
-  text-length: 2;
-  font-family: Colfax-Bold;
-}
-#monthname {
-  y: 86%;
-  fill: #ffffff;
-  text-anchor: start;
-  text-length: 10;
-}
-*/
 #batteryIcon {
   x: 38%;
   y: 6%;
@@ -161,7 +132,7 @@
 
 #distanceIcon {
   x: 12%;
-  y: 90%;
+  y: 92%;
   text-length: 1;
 }
 
@@ -171,6 +142,7 @@
   text-length: 6;
   text-anchor: start;
 }
+
 #floorIcon {
   x: 12%;
   y: 97%;
@@ -195,18 +167,4 @@
   y: 97%;
   text-length: 6;
   text-anchor: start;
-}
-
-#mooncontainer {
-  width: 26;
-  height: 24;
-  x: 50%-13;
-  y: 100%-30;
-}
-
-.moon-item text {
-  font-size: 24;
-  line-increment: 24;
-  text-length: 1;
-  display-align: start;
 }

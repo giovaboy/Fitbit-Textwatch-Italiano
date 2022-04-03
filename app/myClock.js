@@ -8,7 +8,7 @@ import NumberToText from "../common/numberToText";
 
 export default class myClock {
   
-  constructor(callback, animator, domHelper, settingsManager) {
+  constructor(callback, animator, domHelper, dateUpdater, settingsManager) {
     clock.granularity = "minutes";
     clock.ontick = () => {
       this.doTick();
@@ -18,6 +18,7 @@ export default class myClock {
     this.callback = callback;
     this.animator = animator;
     this.domHelper = domHelper;
+    this.dateUpdater = dateUpdater;
     this.settingsManager = settingsManager;
     this.doTick();
     
@@ -27,10 +28,10 @@ export default class myClock {
   doTick(event) {
     //if (DEBUG) console.log(this.isFresh);
     //if (DEBUG) console.log(this.callback);
-    const today = event ? event.date : new Date();
+    let today = event ? event.date : new Date();
     // Now
     let hourInt = today.getHours();
-    const minuteInt = today.getMinutes();
+    let minuteInt = today.getMinutes();
     
     if (preferences.clockDisplay === "12h") {
       hourInt = hourInt % 12 || 12;
@@ -44,7 +45,7 @@ export default class myClock {
     this.domHelper.tensNext.text = currentMinuteParts[0] + ' ' + currentMinuteParts[1];
     this.domHelper.minutesNext.text = currentMinuteParts[2] || '';    
     
-    if (display.aodAvailable && me.permissions.granted("access_aod")) {
+    /*if (display.aodAvailable && me.permissions.granted("access_aod")) {
       // tell the system we support AOD
       display.aodAllowed = true;
       display.addEventListener("change", () => {
@@ -65,7 +66,6 @@ export default class myClock {
           this.domHelper.heartratecontainer.style.display = "inline";
           this.domHelper.stepcontainer.style.display = "inline";
           this.domHelper.floorcontainer.style.display = "none";
-            
         } else {
           this.domHelper.background.style.fill = '#000000';
           this.domHelper.hours.style.fontFamily = "Colfax-Light";
@@ -83,31 +83,30 @@ export default class myClock {
           this.isFresh = true;
         }
       });
-    } else {
+    } else {*/
       display.addEventListener("change", () => {
-      // Is the display on?
-        if (display.on) {
-          //if (DEBUG) console.log("display is on");          
-        } else {
+        if (!display.on) {
           this.isFresh = true;
         }
       });
-    } 
+   // }
+    
+    if (this.callback) {
+        this.callback(today);
+    }
        
-    if ( this.isFresh ) {
+    if (this.isFresh) {
       // Skip animation
       this.domHelper.hours.text = currentHourString;
       this.domHelper.tens.text = currentMinuteParts[0] + ' ' + currentMinuteParts[1];
       this.domHelper.minutes.text = currentMinuteParts[2] || '';
-     // if (DEBUG) { this.domHelper.minutesB.text = secInt; }
+      
       this.isFresh = false;
     } else {
-      // Setup animation
       this.animator.handleTimeChange();
     }
-
-    if (this.callback) {
-        this.callback(today);
-    }
+    
+    this.dateUpdater.updateDate(today);
+    
   }
 }

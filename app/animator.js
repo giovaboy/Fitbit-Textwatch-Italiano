@@ -9,32 +9,37 @@ export default class Animator {
     this.setupMinuteAnimation();
   }
 
-    setupHourAnimation() {
-      requestAnimationFrame(() => {
-        if ( this.domHelper.hours.text != this.domHelper.hoursNext.text ) {
-          this.domHelper.hoursCont.animate('activate');
-          this.domHelper.hoursNextCont.animate('activate');
-        }
-      });
+  setupHourAnimation() {
+    if ( this.domHelper.hours.text != this.domHelper.hoursNext.text ) {
+      this.domHelper.hoursCont.animate('enable');
+      this.domHelper.hoursNextCont.animate('enable');
       setTimeout(() => {
           this.domHelper.hours.text = this.domHelper.hoursNext.text;
+          this.domHelper.hoursCont.animate('disable');
+          this.domHelper.hoursNextCont.animate('disable');
       }, 700);//2000 = 2 secondi
     }
+  }
 
-    setupMinuteAnimation() {
-        requestAnimationFrame(() => {
-           if (this.domHelper.tens.text != this.domHelper.tensNext.text) {
-             this.domHelper.tensCont.animate('activate');
-             this.domHelper.tensNextCont.animate('activate');
-            }
-            if (this.domHelper.minutes.text != this.domHelper.minutesNext.text) {
-              this.domHelper.minutesCont.animate('activate');
-              this.domHelper.minutesNextCont.animate('activate');
-            }
-        });
+  setupMinuteAnimation() {
+    if (this.domHelper.tens.text != this.domHelper.tensNext.text) {
+     this.domHelper.tensCont.animate('enable');
+     this.domHelper.tensNextCont.animate('enable');
+     setTimeout(() => {
+       this.domHelper.tens.text = this.domHelper.tensNext.text;
+       this.domHelper.tensCont.animate('disable');
+       this.domHelper.tensNextCont.animate('disable');
+     },700);
+    }
+
+    if (this.domHelper.minutes.text != this.domHelper.minutesNext.text) {
+      this.domHelper.minutesCont.animate('enable');
+      this.domHelper.minutesNextCont.animate('enable');
         setTimeout(() => {
-            this.domHelper.tens.text = this.domHelper.tensNext.text;
-            this.domHelper.minutes.text = this.domHelper.minutesNext.text;
+          this.domHelper.minutes.text = this.domHelper.minutesNext.text;
+          this.domHelper.minutesCont.animate('disable');
+          this.domHelper.minutesNextCont.animate('disable');
         }, 700);
     }
+  }
 }

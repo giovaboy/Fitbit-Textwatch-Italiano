@@ -8,37 +8,37 @@
     <symbol id="hoursGroup">
       <g>
         <text id="hours" class="hours hours-current"/>
-        <animateTransform attributeType="translate" from="0%" to="-100%" begin="activate" final="restore" easing="ease-in-out" dur=".7"/>
+        <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="hoursNextGroup">
       <g>
         <text id="hoursNext" class="hours hours-next"/>
-        <animateTransform attributeType="translate" from="0%" to="-100%" begin="activate" final="restore" easing="ease-in-out" dur=".7"/>
+        <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="tensGroup" >
       <g>
         <text id="tens" class="mins tens-current"/>
-        <animateTransform attributeType="translate" from="0%" to="-100%" begin="activate" final="restore" easing="ease-in-out" dur=".7"/>
+        <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="tensNextGroup">
       <g>
         <text id="tensNext" class="mins tens-next"/>
-        <animateTransform attributeType="translate" from="0%" to="-100%" begin="activate" final="restore" easing="ease-in-out" dur=".7"/>
+        <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="minutesGroup" >
       <g>
         <text id="minutes" class="mins minutes-current"/>
-        <animateTransform attributeType="translate" from="0%" to="-100%" begin="activate" final="restore" easing="ease-in-out" dur=".7"/>
+        <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="minutesNextGroup" >
       <g>
         <text id="minutesNext" class="mins minutes-next"/>
-        <animateTransform attributeType="translate" from="0%" to="-100%" begin="activate" final="restore" easing="ease-in-out" dur=".7"/>
+        <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
   </defs>
