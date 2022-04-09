@@ -10,6 +10,7 @@ export default class DomHelper {
     this.document = document;
     this.root = document.getElementById('root');
     this.background = document.getElementById('tapzone');
+    
     this.batterycontainer = document.getElementById('batterycontainer');
     this.batteryicon = document.getElementById('batteryIcon');
     this.batterylevel = document.getElementById('batterylevel');
@@ -33,9 +34,6 @@ export default class DomHelper {
     this.caloriescount = document.getElementById('caloriescount');
     
     this.date = document.getElementById('date');
-    
-    this.moonCycle = document.getElementById("moonCycle");
-    this.mooncontainer = document.getElementById('mooncontainer');
 
     this.hours = document.getElementById('hours');
     this.hoursCont = document.getElementById('hoursCont');
@@ -50,6 +48,9 @@ export default class DomHelper {
     this.minutes = document.getElementById('minutes');
     this.minutesCont = document.getElementById('minutesCont');
     this.minutesNext = document.getElementById('minutesNext');
+    this.minutesNextCont = document.getElementById('minutesNextCont');
+  }
+}tesNext = document.getElementById('minutesNext');
     this.minutesNextCont = document.getElementById('minutesNextCont');
   }
 }

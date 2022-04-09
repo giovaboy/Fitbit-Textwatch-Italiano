@@ -14,7 +14,7 @@
     <symbol id="hoursNextGroup">
       <g>
         <text id="hoursNext" class="hours hours-next"/>
-        <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
+        <animateTransform attributeType="translate" from="-10%" to="-110%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="tensGroup" >
@@ -26,7 +26,7 @@
     <symbol id="tensNextGroup">
       <g>
         <text id="tensNext" class="mins tens-next"/>
-        <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
+        <animateTransform attributeType="translate" from="-10%" to="-110%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="minutesGroup" >
@@ -38,7 +38,7 @@
     <symbol id="minutesNextGroup" >
       <g>
         <text id="minutesNext" class="mins minutes-next"/>
-        <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
+        <animateTransform attributeType="translate" from="-10%" to="-110%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
   </defs>
