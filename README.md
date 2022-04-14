@@ -3,5 +3,7 @@
 ![example image](78007out-1.png)
 
 ## Features
-Today stats
-Colors
++ Today stats
++ Colors
++ Heart rate
++ Battery indicator
