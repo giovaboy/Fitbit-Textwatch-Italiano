@@ -25,9 +25,20 @@ const healthData = new Health(domHelper);
 
 
 const clock = new myClock(animator, domHelper, dateUpdater, heartData, healthData, batteryUpdater, settingsManager);
+
+    healthData.updateHealthData();
+    batteryUpdater.updateBattery();
+  }
+  /*
+    console.log("JS memory: " + memory.js.peak + " - " + memory.js.used + "/" + memory.js.total);
+    memory.onmemorypressurechange = function(a) {
+      console.log("memoryPressureChange:" + JSON.stringify(a));
+=======
+const clock = new myClock(animator, domHelper, dateUpdater, heartData, healthData, batteryUpdater, settingsManager);
 ringify(a));
+>>>>>>> 1.0.66
     }
   */
 }
 
-const clock = new myClock(onClockTick, animator, domHelper, dateUpdater, settingsManager);
+const clock = new myClock(onClockTick, animator, domHelper, dateUpdater, heartData,settingsManager);
