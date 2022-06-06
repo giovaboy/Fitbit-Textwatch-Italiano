@@ -17,17 +17,15 @@ const dateUpdater = new DateUpdater(domHelper);
 const batteryUpdater = new BatteryUpdater(domHelper, settingsManager);
 const heartData = new HeartMonitor(domHelper);
 const healthData = new Health(domHelper);
+  
+  //  console.log("JS memory: " + memory.js.peak + " - " + memory.js.used + "/" + memory.js.total);
+  //  memory.onmemorypressurechange = function(a) {
+  //    console.log("memoryPressureChange:" + JSON.stringify(a));
+  //  }
 
 
-const onClockTick = (date) => {
-  if (!display.aodActive && display.on) {
-    heartData.updateHeart();
-    healthData.updateHealthData();
-  }
-  /*
-    console.log("JS memory: " + memory.js.peak + " - " + memory.js.used + "/" + memory.js.total);
-    memory.onmemorypressurechange = function(a) {
-      console.log("memoryPressureChange:" + JSON.stringify(a));
+const clock = new myClock(animator, domHelper, dateUpdater, heartData, healthData, batteryUpdater, settingsManager);
+ringify(a));
     }
   */
 }

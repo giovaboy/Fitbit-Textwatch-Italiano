@@ -9,10 +9,9 @@ export default class HeartMonitor {
     this.domHelper = domHelper;
     
     if (HeartRateSensor) {
-      this.hrm = new HeartRateSensor({ frequency: 1, batch: 3 });
+      this.hrm = new HeartRateSensor({ frequency: 1 , batch: 1 });
       this.domHelper.heartrate.text = "..";
       this.hrm.onreading = () => {
-        //console.log("onreading HR");
         this.updateHeartData();
       }
     }
@@ -31,7 +30,7 @@ export default class HeartMonitor {
   updateHeart() {
     if (me.permissions.granted("access_heart_rate")) {
       this.body.start();
-      if (!display.aodActive && display.on) {
+      if (display.on) {//!display.aodActive && 
         this.hrm.start();
       } else {
         this.hrm.stop();
@@ -43,9 +42,12 @@ export default class HeartMonitor {
 
   updateHeartData() {
     this.domHelper.heartrate.text = this.hrm.heartRate;
-    if (!display.aodActive && display.on) {
+    if (display.on) {//!display.aodActive && 
     }else{
       this.hrm.stop();
+    }
+  }  
+}    this.hrm.stop();
     }
   }  
 }

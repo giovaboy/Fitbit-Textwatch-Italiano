@@ -45,11 +45,11 @@ export default class SettingsManager {
       };
     }
 
-    updateBatteryFill() {
+   /*updateBatteryFill() {
       if (!this.settings.bgColor || !this.settings.fgColor) {
         return;
       }
-    }
+    }*/
   
     setSettings() {
       this.updateBackground();

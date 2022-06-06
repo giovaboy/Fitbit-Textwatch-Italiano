@@ -4,34 +4,49 @@ import { me } from "appbit";
 import { preferences } from "user-settings";
 import NumberToText from "../common/numberToText";
 
-//const DEBUG = false;
+//const DEBUG = true;
 
 export default class myClock {
   
-  constructor(callback, animator, domHelper, dateUpdater, settingsManager) {
+  constructor(animator, domHelper, dateUpdater, heartData, healthData, batteryUpdater, settingsManager) {
+    //if (DEBUG) console.log("constructor called");
+    
     clock.granularity = "minutes";
-    clock.ontick = () => {
-      this.doTick();
+    
+    clock.ontick = (event) => {
+      this.doTick(event.date);
     };
+    
+    display.addEventListener("change", () => {
+      if (!display.on) {
+        this.isFresh = true;
+      } else {
+        this.heartData.updateHeart();
+        this.healthData.updateHealthData();
+        this.batteryUpdater.updateBattery();
+      }
+    });
 
     this.isFresh = true;
-    this.callback = callback;
     this.animator = animator;
     this.domHelper = domHelper;
     this.dateUpdater = dateUpdater;
+    this.heartData = heartData;
+    this.healthData = healthData;
+    this.batteryUpdater = batteryUpdater;
     this.settingsManager = settingsManager;
-    this.doTick();
-    
-    //if (DEBUG) console.log("constructor called");
+
+    this.heartData.updateHeart();
+    this.healthData.updateHealthData();
+    this.batteryUpdater.updateBattery();
+    this.doTick(new Date());
   }
   
-  doTick(event) {
-    //if (DEBUG) console.log(this.isFresh);
-    //if (DEBUG) console.log(this.callback);
-    let today = event ? event.date : new Date();
-    // Now
-    let hourInt = today.getHours();
-    let minuteInt = today.getMinutes();
+  doTick(date) {
+    //if (DEBUG) console.log("doTick(" + date.toTimeString() + ")");
+    //if (DEBUG) console.log("isFresh? " + this.isFresh);
+    let hourInt = date.getHours();
+    let minuteInt = date.getMinutes();
     
     if (preferences.clockDisplay === "12h") {
       hourInt = hourInt % 12 || 12;
@@ -84,29 +99,30 @@ export default class myClock {
         }
       });
     } else {*/
+      /*
+      SPOSTATO NEL CONSTRUCTOR
       display.addEventListener("change", () => {
         if (!display.on) {
           this.isFresh = true;
+        } else {
+          this.heartData.updateHeart();
+          this.healthData.updateHealthData();
+          this.batteryUpdater.updateBattery();
         }
-      });
+      });*/
    // }
-    
-    if (this.callback) {
-        this.callback(today);
-    }
-       
+          
     if (this.isFresh) {
       // Skip animation
       this.domHelper.hours.text = currentHourString;
       this.domHelper.tens.text = currentMinuteParts[0] + ' ' + currentMinuteParts[1];
       this.domHelper.minutes.text = currentMinuteParts[2] || '';
-      
       this.isFresh = false;
     } else {
       this.animator.handleTimeChange();
     }
     
-    this.dateUpdater.updateDate(today);
+    this.dateUpdater.updateDate(date);
     
   }
 }
