@@ -7,3 +7,6 @@
 + Colors
 + Heart rate
 + Battery indicator
+
+## Link
+[Fitbit gallery link](https://gallery.fitbit.com/details/68101b8f-3a30-4ba5-b774-9b10a5099af5)
