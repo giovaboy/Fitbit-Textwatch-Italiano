@@ -31,8 +31,4 @@ export default class BatteryUtil {
     }
   }
   
-}Math.floor(battery.chargeLevel)}${"+"}`;
-      }
-    }
-  
 }

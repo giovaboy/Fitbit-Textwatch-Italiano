@@ -3,11 +3,11 @@ import { me } from 'companion';
 import * as messaging from 'messaging';
 
 const KEY_BACKGROUND = 'bgColor';
-const KEY_FOREGROUND = 'fgColor';
+const KEY_HOURCOLOR = 'hourColor';
+const KEY_MINCOLOR = 'minColor';
+const KEY_DATECOLOR = 'dateColor';
 const KEY_HEALTHCOLOR = 'healthColor';
-const HOUR_FOREGROUND = 'hourColor';
-const MIN_FOREGROUND = 'minColor';
-const KEY_SHOW_BATTERY2 = 'showBattery2';
+const KEY_SHOW_BATTERY = 'showBattery';
 
 settingsStorage.onchange = (evt) => {
   //console.log('settings onchange', JSON.stringify(evt));
@@ -26,11 +26,12 @@ const sendValue = (key, val) => {
 
 const updateAll = () => {
   sendValue(KEY_BACKGROUND, settingsStorage.getItem(KEY_BACKGROUND));
+  sendValue(KEY_HOURCOLOR, settingsStorage.getItem(KEY_HOURCOLOR));
+  sendValue(KEY_MINCOLOR, settingsStorage.getItem(KEY_MINCOLOR));
   sendValue(KEY_HEALTHCOLOR, settingsStorage.getItem(KEY_HEALTHCOLOR));
-  sendValue(KEY_FOREGROUND, settingsStorage.getItem(KEY_FOREGROUND));
-  sendValue(HOUR_FOREGROUND, settingsStorage.getItem(HOUR_FOREGROUND));
-  sendValue(MIN_FOREGROUND, settingsStorage.getItem(MIN_FOREGROUND));
-  sendValue(KEY_SHOW_BATTERY2, settingsStorage.getItem(KEY_SHOW_BATTERY2));
+  sendValue(KEY_DATECOLOR, settingsStorage.getItem(KEY_DATECOLOR));
+  sendValue(KEY_SHOW_BATTERY, settingsStorage.getItem(KEY_SHOW_BATTERY));
+
 }
 
 const sendSettingData = (data) => {

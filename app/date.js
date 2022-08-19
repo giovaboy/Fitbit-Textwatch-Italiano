@@ -12,8 +12,4 @@ export default class DateManager {
     }
   }
   
-} sData ) {
-      this.domHelper.date.text = sData;
-    }
-  }
 }

@@ -20,6 +20,7 @@ export default class myClock {
     display.addEventListener("change", () => {
       if (!display.on) {
         this.isFresh = true;
+        //this.heartData.stopHr();
       } else {
         this.heartData.updateHeart();
         this.healthData.updateHealthData();

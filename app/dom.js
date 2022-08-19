@@ -50,7 +50,4 @@ export default class DomHelper {
     this.minutesNext = document.getElementById('minutesNext');
     this.minutesNextCont = document.getElementById('minutesNextCont');
   }
-}tesNext = document.getElementById('minutesNext');
-    this.minutesNextCont = document.getElementById('minutesNextCont');
-  }
 }

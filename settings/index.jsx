@@ -35,7 +35,61 @@ const colors = [
   {color: '#C658FB'},
   {color: '#FA4D61'},
   {color: '#1B2C40'},
-  {color: '#F0A500'}
+  {color: '#F0A500'},
+  {color: 'tomato'},
+  {color: 'sandybrown'},
+  {color: 'gold'},
+  {color: 'aquamarine'},
+  {color: 'deepskyblue'},
+  {color: 'plum'},
+  {color: "black"},
+  {color: "darkslategrey"},
+  {color: "dimgrey"},
+  {color: "grey"},
+  {color: "lightgrey"},
+  {color: "beige"},
+  {color: "white"},
+  {color: "maroon"},
+  {color: "saddlebrown"},
+  {color: "darkgoldenrod"},
+  {color: "goldenrod"},
+  {color: "rosybrown"},
+  {color: "wheat"},
+  {color: "navy"},
+  {color: "blue"},
+  {color: "dodgerblue"},
+  {color: "deepskyblue"},
+  {color: "aquamarine"},
+  {color: "cyan"},
+  {color: "olive"},
+  {color: "darkgreen"},
+  {color: "green"},
+  {color: "springgreen"},
+  {color: "limegreen"},
+  {color: "palegreen"},
+  {color: "lime"},
+  {color: "greenyellow"},
+  {color: "darkslateblue"},
+  {color: "slateblue"},
+  {color: "purple"},
+  {color: "fuchsia"},
+  {color: "plum"},
+  {color: "orchid"},
+  {color: "lavender"},
+  {color: "darkkhaki"},
+  {color: "khaki"},
+  {color: "lemonchiffon"},
+  {color: "yellow"},
+  {color: "gold"},
+  {color: "orangered"},
+  {color: "orange"},
+  {color: "coral"},
+  {color: "lightpink"},
+  {color: "palevioletred"},
+  {color: "deeppink"},
+  {color: "darkred"},
+  {color: "crimson"},
+  {color: "red"}       
 ];
 
 const settings = (props) => {
@@ -45,29 +99,46 @@ const settings = (props) => {
          <Text>Grazie per aver installato questa watchface!</Text>
       </Section> 
       
-        <Section title={<Text bold>Colore sfondo</Text>}>
+      <Section>
+       <Toggle settingsKey="toggleColSfondo" label="Mostra selezione Colore sfondo"/>
+        { JSON.parse(props.settings.toggleColSfondo || 'false') &&
           <ColorSelect settingsKey="bgColor" colors={colors} centered />
-        </Section>
-        
-        <Section title={<Text bold>Colore ora</Text>}>
-          <ColorSelect settingsKey="hourColor" colors={colors} centered />
-        </Section>
-        
-        <Section title={<Text bold>Colore minuti</Text>}>
-          <ColorSelect settingsKey="minColor" colors={colors} centered />
-        </Section>
-        
-        <Section title={<Text bold>Colore data</Text>}>
-          <ColorSelect settingsKey="fgColor" colors={colors} centered />
-        </Section>
+        }
+      </Section>
       
-        <Section title={<Text bold>Colore hr/dati salute</Text>}>
-            <ColorSelect settingsKey="healthColor" colors={colors} centered />
-          </Section>
+      <Section>
+        <Toggle settingsKey="toggleColOra" label="Mostra selezione Colore ora"/>
+         { JSON.parse(props.settings.toggleColOra || 'false') &&
+          <ColorSelect settingsKey="hourColor" colors={colors} centered />
+         }
+      </Section>
+      
+      <Section>
+          <Toggle settingsKey="toggleColMin" label="Mostra selezione Colore minuti"/>
+        { JSON.parse(props.settings.toggleColMin || 'false') &&
+         <ColorSelect settingsKey="minColor" colors={colors} centered />
+        }
+      </Section>
+      
+      <Section>
+        <Toggle settingsKey="toggleColData" label="Mostra selezione Colore data"/>
+        { JSON.parse(props.settings.toggleColData || 'false') &&
+          <ColorSelect settingsKey="dateColor" colors={colors} centered />
+        }
+      </Section>
+      
+      <Section>
+        <Toggle settingsKey="toggleColHealth" label="Mostra selezione Colore dati salute"/>
+        { JSON.parse(props.settings.toggleColHealth || 'false') &&
+          <ColorSelect settingsKey="healthColor" colors={colors} centered />
+        }
+      </Section>
 
-        <Section title={<Text bold align="center">Altro</Text>}>
+      <Section title={<Text bold align="center">Altro</Text>}>
         
-        <Select label={`Mostra stato della batteria`}
+        <Select label="Mostra stato della batteria"
+                title="Mostra stato della batteria"
+                selectViewTitle="Mostra stato della batteria"
                 settingsKey="showBattery"
                 options={[
                   {name:"No"},

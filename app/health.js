@@ -10,7 +10,7 @@ export default class Health {
     if (me.permissions.granted("access_activity")) {
       if ( today.adjusted ) {
         this.domHelper.stepcount.text = today.adjusted.steps;
-        this.domHelper.distancecount.text = `${(today.adjusted.distance/1000).toFixed(2)}`;
+        this.domHelper.distancecount.text = `${(today.adjusted.distance/1000).toFixed(2)}`;//.replace(/,/g,'.');
         this.domHelper.floorcount.text = today.adjusted.elevationGain;
         this.domHelper.caloriescount.text = today.adjusted.calories;
       } else {

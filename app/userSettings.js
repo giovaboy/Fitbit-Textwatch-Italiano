@@ -35,22 +35,16 @@ export default class SettingsManager {
       }
 
       this.settings = {
-        fgColor: this.settings.fgColor || '#FFFFFF',
-        healthColor: this.settings.healthColor || '#FFFFFF',
         bgColor: this.settings.bgColor || '#000000',
         hourColor: this.settings.hourColor || '#FFFFFF',
-        minColor: this.settings.minColor || '#FFFFFF',        
+        minColor: this.settings.minColor || '#FFFFFF',
+        dateColor: this.settings.dateColor || '#FFFFFF',
+        healthColor: this.settings.healthColor || '#FFFFFF',       
         showBattery: this.settings.showBattery || { "selected": 0 }
         //showMoon: this.settings.showMoon || false
       };
     }
 
-   /*updateBatteryFill() {
-      if (!this.settings.bgColor || !this.settings.fgColor) {
-        return;
-      }
-    }*/
-  
     setSettings() {
       this.updateBackground();
       this.updateForeground();
@@ -67,7 +61,7 @@ export default class SettingsManager {
       this.domHelper.tensNext.style.fill = this.settings.minColor;
       this.domHelper.minutes.style.fill = this.settings.minColor;
       this.domHelper.minutesNext.style.fill = this.settings.minColor;
-      this.domHelper.date.style.fill = this.settings.fgColor;
+      this.domHelper.date.style.fill = this.settings.dateColor;
       this.domHelper.heartrate.style.fill = this.settings.healthColor;
       this.domHelper.stepcount.style.fill = this.settings.healthColor;
       this.domHelper.distancecount.style.fill = this.settings.healthColor;
@@ -80,19 +74,19 @@ export default class SettingsManager {
         this.settings.bgColor = evt.data.value;
         this.updateBackground();
       }
-      if (evt.data.key === 'fgColor') {
-        this.settings.fgColor = evt.data.value;
+      if (evt.data.key === 'dateColor') {
+        this.settings.dateColor = evt.data.value;
         this.updateForeground();
       }
       if (evt.data.key === 'healthColor') {
         this.settings.healthColor = evt.data.value;
         this.updateForeground();
       }
-      if (evt.data.key == 'hourColor') {
+      if (evt.data.key === 'hourColor') {
         this.settings.hourColor = evt.data.value;
         this.updateForeground();
       }
-      if (evt.data.key == 'minColor') {
+      if (evt.data.key === 'minColor') {
         this.settings.minColor = evt.data.value;
         this.updateForeground();
       }      
