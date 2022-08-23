@@ -11,10 +11,19 @@ const KEY_SHOW_BATTERY = 'showBattery';
 
 settingsStorage.onchange = (evt) => {
   //console.log('settings onchange', JSON.stringify(evt));
-  sendValue(evt.key, evt.newValue);
+  switch (evt.key) {
+    case KEY_BACKGROUND:
+    case KEY_HOURCOLOR:
+    case KEY_MINCOLOR:
+    case KEY_DATECOLOR:
+    case KEY_HEALTHCOLOR:
+    case KEY_SHOW_BATTERY:
+      sendValue(evt.key, evt.newValue);
+      break;
+  }
 }
 
-const sendValue = (key, val) => {
+function sendValue(key, val) {
   //console.info(key, val);
   if (val !== null) {
     sendSettingData({
@@ -24,21 +33,18 @@ const sendValue = (key, val) => {
   }
 }
 
-const updateAll = () => {
+function updateAll() {
   sendValue(KEY_BACKGROUND, settingsStorage.getItem(KEY_BACKGROUND));
   sendValue(KEY_HOURCOLOR, settingsStorage.getItem(KEY_HOURCOLOR));
   sendValue(KEY_MINCOLOR, settingsStorage.getItem(KEY_MINCOLOR));
-  sendValue(KEY_HEALTHCOLOR, settingsStorage.getItem(KEY_HEALTHCOLOR));
   sendValue(KEY_DATECOLOR, settingsStorage.getItem(KEY_DATECOLOR));
+  sendValue(KEY_HEALTHCOLOR, settingsStorage.getItem(KEY_HEALTHCOLOR));
   sendValue(KEY_SHOW_BATTERY, settingsStorage.getItem(KEY_SHOW_BATTERY));
-
 }
 
-const sendSettingData = (data) => {
+function sendSettingData(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     messaging.peerSocket.send(data);
-  //} else {
-    //console.log('no peerSocket connection');
   }
 }
 

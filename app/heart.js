@@ -45,7 +45,7 @@ export default class HeartMonitor {
   updateHeartData() {
     this.domHelper.heartrate.text = this.hrm.heartRate;
     if (display.on) {//!display.aodActive && 
-    }else{
+    } else {
       this.hrm.stop();
     }
   }
