@@ -10,43 +10,43 @@ function getThemeTitleList(){
 let themeTitles = getThemeTitleList();
 
 const colors = [
-  {color: 'black'},
-  {color: 'white'},
+  {color: '#000000'},
+  {color: '#ffffff'},
   {color: '#303030'},
   {color: '#505050'},
-  {color: '#A0A0A0'},
-  {color: '#5B4CFF'},
-  {color: '#8080FF'},
-  {color: '#3182DE'},
-  {color: '#14D3F5'},
-  {color: '#3BF7DE'},
-  {color: '#7090B5'},
+  {color: '#a0a0a0'},
+  {color: '#5b4cff'},
+  {color: '#8080ff'},
+  {color: '#3182de'},
+  {color: '#14d3f5'},
+  {color: '#3bf7de'},
+  {color: '#7090b5'},
   {color: '#134022'},
   {color: '#394003'},
-  {color: '#00A629'},
-  {color: '#5BE37D'},
-  {color: '#B8FC68'},
-  {color: '#E4FA3C'},
-  {color: '#FFCC33'},
-  {color: '#FC6B3A'},
-  {color: '#F83C40'},
-  {color: '#F83478'},
-  {color: '#F80070'},
-  {color: '#D828B8'},
-  {color: '#A51E7C'},
-  {color: '#BD4EFC'},
-  {color: '#4D86FF'},
-  {color: '#15B9ED'},
-  {color: '#2CB574'},
-  {color: '#8173FF'},
-  {color: '#72B314'},
-  {color: '#F1247C'},
-  {color: '#FF752D'},
-  {color: '#FF78B7'},
-  {color: '#C658FB'},
-  {color: '#FA4D61'},
-  {color: '#1B2C40'},
-  {color: '#F0A500'},
+  {color: '#00a629'},
+  {color: '#5be37d'},
+  {color: '#b8fc68'},
+  {color: '#e4fa3c'},
+  {color: '#ffcc33'},
+  {color: '#fc6b3a'},
+  {color: '#f83c40'},
+  {color: '#f83478'},
+  {color: '#f80070'},
+  {color: '#d828b8'},
+  {color: '#a51e7c'},
+  {color: '#bd4efc'},
+  {color: '#4d86ff'},
+  {color: '#15b9ed'},
+  {color: '#2cb574'},
+  {color: '#8173ff'},
+  {color: '#72b314'},
+  {color: '#f1247c'},
+  {color: '#ff752d'},
+  {color: '#ff78b7'},
+  {color: '#c658fb'},
+  {color: '#fa4d61'},
+  {color: '#1b2c40'},
+  {color: '#f0a500'},
   {color: '#bdbdbd'},
   {color: '#e91e63'},
   {color: '#9c27b0'},
@@ -146,14 +146,15 @@ const settings = (props) => {
     <Page>
       
       <Section title={<Text bold align="center">Text Watch Italiano</Text>}>
-         <Text>Grazie per aver installato questa watchface!</Text>
+        <Text>Grazie per aver installato questa watchface!</Text>
+        <Text align="center"><Link source="https://www.paypal.me/GiovanniZilli">Se ti va, offrimi un gelato!🍨</Link></Text>
       </Section>
       
       <Section>      
         <Select
-          label="Scegli tra delle preconfigurazioni di colori"
-          title="Scegli tra delle preconfigurazioni di colori"
-          selectViewTitle="Scegli tra delle preconfigurazioni di colori"
+          label="Scegli tra temi preconfigurati"
+          title="Scegli tra temi preconfigurati"
+          selectViewTitle="Scegli tra temi preconfigurazioni di colori"
           settingsKey="theme"
           options={themeTitles}
           onSelection={(selection) => setTheme(selection.selected)}

@@ -2,11 +2,11 @@ export const themes = [
   {
   "name":"Bianco su Nero",
   "values":{
-    "bgColor": "black",
-    "hourColor": "white",
-    "minColor": "white",
-    "dateColor": "white",
-    "healthColor": "white"
+    "bgColor": "#000000",
+    "hourColor": "#ffffff",
+    "minColor": "#ffffff",
+    "dateColor": "#ffffff",
+    "healthColor": "#ffffff"
     }
   },
   {
@@ -40,22 +40,22 @@ export const themes = [
     }
   },
   {
-  "name":"Il mio preferito",
+  "name":"Azzurrino e Giallino",
   "values":{
     "bgColor": "#000000",
-    "hourColor": "#3182DE",
-    "minColor": "#FFCC33",
-    "dateColor": "#E4FA3C",
+    "hourColor": "#3182de",
+    "minColor": "#ffcc33",
+    "dateColor": "#e4fa3c",
     "healthColor": "#ffffff"
     }
   },
   {
-  "name":"Il mio preferito 2",
+  "name":"Viola e Lime",
   "values":{
     "bgColor": "#000000",
-    "hourColor": "#8080FF",
-    "minColor": "#FFEB3B",
-    "dateColor": "#E4FA3C",
+    "hourColor": "#8080ff",
+    "minColor": "#ffeb3b",
+    "dateColor": "#e4fa3c",
     "healthColor": "#ffffff"
     }
   }
