@@ -1,6 +1,6 @@
 export const themes = [
   {
-  "name":"Bianco su Nero",
+  "name":"Bianco e Nero",
   "values":{
     "bgColor": "#000000",
     "hourColor": "#ffffff",
@@ -10,13 +10,13 @@ export const themes = [
     }
   },
   {
-  "name":"Viola e Blu",
+  "name":"Viola",
   "values":{
-    "bgColor": "#ffe0b2",
+    "bgColor": "#000000",
     "hourColor": "#9c27b0",
-    "minColor": "#673ab7",
-    "dateColor": "#3f51b5",
-    "healthColor": "#2196f3"
+    "minColor": "#c658fb",
+    "dateColor": "#ff78b7",
+    "healthColor": "#dda0dd"
     }
   },
   {
@@ -30,13 +30,13 @@ export const themes = [
     }
   },
   {
-  "name":"Arancione e Giallo",
+  "name":"Arancione",
   "values":{
-    "bgColor": "#fff9c4",
-    "hourColor": "#f44336",
-    "minColor": "#ff5722",
-    "dateColor": "#ff9800",
-    "healthColor": "#ffc107"
+    "bgColor": "#000000",
+    "hourColor": "#ff5722",
+    "minColor": "#ff9800",
+    "dateColor": "#ffc107",
+    "healthColor": "#ffe0b2"
     }
   },
   {
@@ -57,6 +57,10 @@ export const themes = [
     "minColor": "#ffeb3b",
     "dateColor": "#e4fa3c",
     "healthColor": "#ffffff"
+    }
+  }
+]
+ff"
     }
   }
 ]

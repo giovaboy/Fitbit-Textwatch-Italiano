@@ -4,66 +4,48 @@
 
 .hours {
   font-size: 58;
-  text-length: 12;
   font-family: Colfax-Bold;
+  text-anchor: middle;
 }
 
 .mins {
   font-size: 58;
-  text-length: 12;
   font-family: Colfax-Regular;
+  text-anchor: middle;
 }
 
 #hours {
   text-length: 12;
-  font-size: 58;
-  font-family: Colfax-Bold;
-  text-anchor: middle;
   x: 50%; 
   y: 32%;
 }
 
 #hoursNext {
   text-length: 12;
-  font-size: 58;
-  font-family: Colfax-Bold;
-  text-anchor: middle;
   x: 160%;
   y: 32%;
 }
 
 #tens {
   text-length: 12;
-  font-size: 58;
-  font-family: Colfax-Regular;
-  text-anchor: middle;
   x: 50%;
   y: 50%;
 }
 
 #tensNext {
   text-length: 12;
-  font-size: 58;
-  font-family: Colfax-Regular;
-  text-anchor: middle;
   x: 160%;
   y: 50%;
 }
 
 #minutes {
-  text-length: 12;
-  font-size: 58;
-  font-family: Colfax-Regular;
-  text-anchor: middle;
+  text-length: 8;
   x: 50%;
   y: 68%;
 }
 
 #minutesNext {
-  text-length: 12;
-  font-size: 58;
-  font-family: Colfax-Regular;
-  text-anchor: middle;
+  text-length: 8;
   x: 160%;
   y: 68%;
 }
@@ -78,14 +60,14 @@
 #date {
   x: 50%;
   y: 86%;
-  text-length: 22;
+  text-length: 23;
   text-anchor: middle;
 }
 
 #batteryIcon {
   x: 38%;
   y: 6%;
-  text-length:1;
+  text-length: 1;
 }
 
 #batterylevel {
@@ -128,6 +110,46 @@
   y: 97%;
   text-length: 6;
   text-anchor: start;
+}
+
+#distanceIcon {
+  x: 12%;
+  y: 92%;
+  text-length: 1;
+}
+
+#distancecount {
+  x: $+2;
+  y: 97%;
+  text-length: 6;
+  text-anchor: start;
+}
+
+#floorIcon {
+  x: 12%;
+  y: 97%;
+  text-length: 1;
+}
+
+#floorcount {
+  x: $+2;
+  y: 97%;
+  text-length: 4;
+  text-anchor: start;
+}
+
+#caloriesIcon {
+  x: 12%;
+  y: 90%;
+  text-length: 1;
+}
+
+#caloriescount {
+  x: $+2;
+  y: 97%;
+  text-length: 6;
+  text-anchor: start;
+}start;
 }
 
 #distanceIcon {

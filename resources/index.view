@@ -1,7 +1,7 @@
 <svg id="root" class="background" >
   <rect x="0" y="0" width="100%" height="100%" id="tapzone" />
   
-  <svg id="batterycontainer" class="container">
+  <svg id="batterycontainer">
     <text id="batteryIcon" class="aux-data">⚡</text>
     <text id="batterylevel" class="aux-data"></text>
   </svg>
@@ -10,28 +10,34 @@
   <use id="tensCont" href="#tensGroup" /><use id="tensNextCont" href="#tensNextGroup" />
   <use id="minutesCont" href="#minutesGroup" /><use id="minutesNextCont" href="#minutesNextGroup" />
   
-  <svg id="heartratecontainer" class="container">
+  <svg id="heartratecontainer">
     <text id="heartIcon" class="aux-data">♥️</text>
     <text id="heartrate" class="aux-data"></text>
   </svg>
 
-  <svg id="healthcontainer" class="container">
+  <svg id="healthcontainer">
     <use id="healthCycle" href="#cycleview">
-      <use href="#cycleview-item" class="cycle-item">        
+      <use href="#cycleview-item">        
         <text id="stepIcon" class="aux-data">👟</text>
         <text id="stepcount" class="aux-data"></text>
       </use>
-      <use href="#cycleview-item" class="cycle-item">
+      <use href="#cycleview-item">
         <text id="distanceIcon" class="aux-data">📏</text>
         <text id="distancecount" class="aux-data"></text>
       </use>
-      <use href="#cycleview-item" class="cycle-item">
+      <use href="#cycleview-item">
         <text id="floorIcon" class="aux-data">🔺</text>
         <text id="floorcount" class="aux-data"></text>
       </use>
-      <use href="#cycleview-item" class="cycle-item">
+      <use href="#cycleview-item">
         <text id="caloriesIcon" class="aux-data">🔥</text>
         <text id="caloriescount" class="aux-data"></text>
+      </use>
+    </use>
+  </svg>
+  
+  <text id="date" class="aux-data"></text>
+</svg> id="caloriescount" class="aux-data"></text>
       </use>
     </use>
   </svg>

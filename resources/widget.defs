@@ -7,38 +7,43 @@
   
     <symbol id="hoursGroup">
       <g>
-        <text id="hours" class="hours hours-current"/>
+        <text id="hours" class="hours"/>
         <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="hoursNextGroup">
       <g>
-        <text id="hoursNext" class="hours hours-next"/>
+        <text id="hoursNext" class="hours"/>
         <animateTransform attributeType="translate" from="-10%" to="-110%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="tensGroup" >
       <g>
-        <text id="tens" class="mins tens-current"/>
+        <text id="tens" class="mins"/>
         <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="tensNextGroup">
       <g>
-        <text id="tensNext" class="mins tens-next"/>
+        <text id="tensNext" class="mins"/>
         <animateTransform attributeType="translate" from="-10%" to="-110%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="minutesGroup" >
       <g>
-        <text id="minutes" class="mins minutes-current"/>
+        <text id="minutes" class="mins"/>
         <animateTransform attributeType="translate" from="0%" to="-100%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
     <symbol id="minutesNextGroup" >
       <g>
-        <text id="minutesNext" class="mins minutes-next"/>
+        <text id="minutesNext" class="mins"/>
         <animateTransform attributeType="translate" from="-10%" to="-110%" begin="enable" end="disable" final="restore" easing="ease-in-out" dur=".7"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+e" easing="ease-in-out" dur=".7"/>
       </g>
     </symbol>
   </defs>

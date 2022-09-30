@@ -23,7 +23,7 @@ settingsStorage.onchange = (evt) => {
   }
 }
 
-function sendValue(key, val) {
+const sendValue = (key, val) => {
   //console.info(key, val);
   if (val !== null) {
     sendSettingData({
@@ -33,7 +33,7 @@ function sendValue(key, val) {
   }
 }
 
-function updateAll() {
+const updateAll = () => {
   sendValue(KEY_BACKGROUND, settingsStorage.getItem(KEY_BACKGROUND));
   sendValue(KEY_HOURCOLOR, settingsStorage.getItem(KEY_HOURCOLOR));
   sendValue(KEY_MINCOLOR, settingsStorage.getItem(KEY_MINCOLOR));
@@ -42,13 +42,14 @@ function updateAll() {
   sendValue(KEY_SHOW_BATTERY, settingsStorage.getItem(KEY_SHOW_BATTERY));
 }
 
-function sendSettingData(data) {
+const sendSettingData = (data) => {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     messaging.peerSocket.send(data);
   }
 }
 
+//The companion was started due to settings changes
 if (me.launchReasons.settingsChanged) {
-  //console.log('settings changed without companion');
+  //console.log('The companion was started due to settings changes');
   updateAll();
 }

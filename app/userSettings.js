@@ -18,12 +18,12 @@ export default class SettingsManager {
       this.handleMessage(event);
     };
     // Force settings to be sent on init
-   /*messaging.peerSocket.addEventListener('open', () => {
+    messaging.peerSocket.addEventListener('open', () => {
       //console.log('INIT');
       messaging.peerSocket.send({
         key: 'INIT'
       });
-    });*/
+    });
   }
   
     getSavedSettings() {
@@ -116,4 +116,5 @@ export default class SettingsManager {
     }
   
    
+} 
 }
