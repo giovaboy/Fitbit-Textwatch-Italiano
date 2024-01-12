@@ -303,5 +303,3 @@ const settings = (props) => {
     </Page>
   )
 }
-
-registerSettingsPage(settings);
