@@ -36,5 +36,5 @@ Thumbs.db
 packages/*/dist/**/*
 packages/*/lib/**/*
 packages/*/mod/**/*
-
+package-lock.json
 tsconfig.tsbuildinfo
